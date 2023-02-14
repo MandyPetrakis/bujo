@@ -25,7 +25,7 @@ function NavBar() {
         style={linkStyles}
         activeStyle={{ background: "#f2f2f2", color: "#222222" }}
       >
-        Daily View
+        Rapid Log
       </NavLink>
       <NavLink
         to="/calendar"
@@ -43,6 +43,15 @@ function NavBar() {
         activeStyle={{ background: "#f2f2f2", color: "#222222" }}
       >
         Tasks
+      </NavLink>
+      <NavLink
+        to="/ideas"
+        exact
+        className="link"
+        style={linkStyles}
+        activeStyle={{ background: "#f2f2f2", color: "#222222" }}
+      >
+        Ideas
       </NavLink>
     </div>
   );

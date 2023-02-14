@@ -3,9 +3,9 @@ import DailyLog from "./DailyLog";
 import "./App.css";
 import NavBar from "./NavBar";
 import Calendar from "./Calendar";
-import ToDo from "./ToDo";
-
-import { Route, Switch, Routes } from "react-router-dom";
+import Tasks from "./Tasks";
+import Ideas from "./Ideas";
+import { Route, Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -18,8 +18,11 @@ function App() {
         <Route path="/calendar">
           <Calendar />
         </Route>
+        <Route path="/ideas">
+          <Ideas />
+        </Route>
         <Route>
-          <ToDo path="/todo" />
+          <Tasks path="/todo" />
         </Route>
       </Switch>
     </div>

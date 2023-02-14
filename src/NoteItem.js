@@ -12,7 +12,7 @@ function NoteItem({ note }) {
   } else if (note.type === "event") {
     return (
       <div className="item">
-        O {note.details} | {note.eventDate}
+        O {note.details} | {note.eventMonth}/{note.eventDay}
       </div>
     );
   } else if (note.type === "idea") {
