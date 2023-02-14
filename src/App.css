@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    background-color: #dddbdb;
+    color: #222222;
+    padding: 40px;
+    font-family: arial;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .card{
+    width: 550px;
+    border-style: outset;
+    border-color: #b7b7b7b2;
+    background-color: #f2f2f2;
+    border-radius: 15px;
+    margin: 5px
   }
-  to {
-    transform: rotate(360deg);
+  .day{
+    font-weight: bold;
+    margin: 5px;
+    display: flex;
   }
-}
+  .dayEvent{
+    font-weight: 100;
+    display: flex;
+    margin-left: 3px;
+  }
+
+  .button{
+    display: grid;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background: #222222;
+    border-style: none;
+    border-radius: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
+    color: #f2f2f2
+
+  }
+  .monthSelect{
+    background-color: #dddbdb;
+    border-style: none;
+    font-size: 30px;
+    padding: 3px;
+    margin: auto;
+    font-weight: bold;
+  }
+  .navBar {
+margin-bottom: 10px;
+
+  }
+  .form{
+    margin: 10px
+  }
+
+  .interactive {
+    background: #F2F2F2F2;
+    border-radius: 12px;
+    padding: 2px;
+    padding-left: 5px;
+    border-style: none;
+  }
+
+  .noteInput{
+    width : 60%;
+    margin: 3;
+    border-style: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+  }
+
+  .item {
+padding: 2px;
+margin: 5px
+  }
+  .center{
+text-align: center;
+  }

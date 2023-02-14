@@ -1,0 +1,136 @@
+{
+  "notes": [
+    {
+      "details": "Emiliano's Birthday",
+      "type": "event",
+      "eventDate": "2023-03-17",
+      "eventDay": "17",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-11",
+      "id": 2
+    },
+    {
+      "details": "Carolyn's Birthday",
+      "type": "event",
+      "eventDate": "2023-02-23",
+      "eventDay": "23",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-11",
+      "id": 3
+    },
+    {
+      "details": "Corporate Org Chart",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-2-11",
+      "id": 4
+    },
+    {
+      "details": "Park date with lulu crew",
+      "type": "event",
+      "eventDate": "2023-02-12",
+      "eventDay": "12",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-11",
+      "id": 5
+    },
+    {
+      "details": "Walk Fred",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-13",
+      "id": 6
+    },
+    {
+      "details": "Taxes",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-13",
+      "id": 7
+    },
+    {
+      "details": "Valentines Day",
+      "type": "event",
+      "eventDate": "2023-02-14",
+      "eventDay": "14",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 8
+    },
+    {
+      "details": "Astian on vacation",
+      "type": "event",
+      "eventDate": "2023-02-19",
+      "eventDay": "19",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 9
+    },
+    {
+      "details": "My Birthday",
+      "type": "event",
+      "eventDate": "2023-06-16",
+      "eventDay": "16",
+      "eventMonth": "06",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 10
+    },
+    {
+      "details": "Super Bowl",
+      "type": "event",
+      "eventDate": "2023-02-12",
+      "eventDay": "12",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 11
+    },
+    {
+      "details": "Career video",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-13",
+      "id": 12
+    },
+    {
+      "details": "Phase 2 lectures",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-13",
+      "id": 13
+    },
+    {
+      "details": "Research Greek Mythology books ",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-2-13",
+      "id": 14
+    },
+    {
+      "details": "Megan's Birthday",
+      "type": "event",
+      "eventDate": "2023-08-19",
+      "eventDay": "19",
+      "eventMonth": "08",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 15
+    },
+    {
+      "details": "Pick Emiliano up from the airport (12pm)",
+      "type": "event",
+      "eventDate": "2023-02-14",
+      "eventDay": "14",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-2-13",
+      "id": 16
+    }
+  ]
+}
