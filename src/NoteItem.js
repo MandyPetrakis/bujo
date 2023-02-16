@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useUpdateNotes, useNotes } from "./Context";
+import { BlockNoteView, useBlockNote } from "@blocknote/react";
+import "@blocknote/core/style.css";
 
 function NoteItem({ note }) {
   const [completed, setCompleted] = useState(false);
@@ -7,6 +9,11 @@ function NoteItem({ note }) {
   const [additionalDetails, setAdditionalDetails] = useState("");
   const notes = useNotes();
   const updateNotes = useUpdateNotes();
+  const editor = useBlockNote({
+    onUpdate: ({ editor }) => {
+      console.log(editor.getJSON());
+    },
+  });
 
   function handleIdeaClick() {
     setExpand(!expand);
@@ -57,21 +64,7 @@ function NoteItem({ note }) {
           ! {note.details}
         </div>
         <div className="noteBox">
-          {expand ? (
-            <form onSubmit={handleSubmit}>
-              <input
-                className="additionalNotes"
-                type="text"
-                placeholder="Tell me more..."
-                onChange={handleChange}
-              />
-              <input
-                className="interactive"
-                type="submit"
-                value="Save Details"
-              />
-            </form>
-          ) : null}
+          {expand ? <BlockNoteView editor={editor} /> : null}
         </div>
       </div>
     );

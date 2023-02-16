@@ -21,6 +21,7 @@ body {
   }
 
   .cardContainer{
+
     border-style: outset;
     border-color: #b7b7b7b2;
     background-color: #f2f2f2;
@@ -53,6 +54,7 @@ body {
     border-radius: 12px;
     border-bottom: 1px solid #b7b7b7b2;
     background-color: #F2F2F2F2;
+    margin: 3px;
   }
 
   .cardItem3{
@@ -63,6 +65,12 @@ body {
     padding-left: 5px;
     border-style: none;
   }
+  
+    .flexList{
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+    }
   
   .button{
     display: grid;
@@ -77,39 +85,20 @@ body {
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: 20px;
     color: #f2f2f2
   }
 
   .calendarItem{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: column;
     flex-wrap: nowrap;
     padding: 20px;
     align-items: start;
-  }
-  .calendarFlexList{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    width: 50%;
-  }
-
-  .flexList{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  .day{
-    font-weight: bold;
-    margin: 5px;
-    display: flex;
-  }
-  .dayEvent{
-    font-weight: 100;
-    display: flex;
-    margin-left: 3px;
+    flex-grow: 2;
+    align-items: stretch;
+    width: 300px
   }
 
   .monthSelect{
@@ -120,6 +109,37 @@ body {
     margin: auto;
     font-weight: bold;
   }
+
+.focus{
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+  .calendarFlexList{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+  
+  .day{
+    font-weight: bold;
+    margin: 5px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .dayEvent{
+    font-weight: 100;
+    margin-left: 5px;
+  }
+  .calendarItemContainer{
+    display: flex;
+    align-items: start;
+  }
+
+
   .item {
     padding: 2px;
     margin: 5px;
@@ -130,6 +150,11 @@ body {
 text-align: center;
   }
 
+.ideaContainer{
+  display: flex;
+  flex-direction: column;
+  margin: 20px
+}
   .additionalNotes {
     width: 500px;
     height: 60px;
@@ -138,5 +163,7 @@ text-align: center;
   }
 
   .noteBox{
-    margin: 20px
+    margin: 20px;
+
+
   }

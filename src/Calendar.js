@@ -5,6 +5,8 @@ import {
   useCurrentYear,
   useNotes,
 } from "./Context";
+import { BlockNoteView, useBlockNote } from "@blocknote/react";
+import "@blocknote/core/style.css";
 
 function Calendar() {
   const today = useCurrentDate();
@@ -12,6 +14,11 @@ function Calendar() {
   const year = useCurrentYear();
   const notes = useNotes();
   const [displayMonth, setDisplayMonth] = useState(currentMonth);
+  const editor = useBlockNote({
+    onUpdate: ({ editor }) => {
+      console.log(editor.getJSON());
+    },
+  });
 
   function handleChange(e) {
     setDisplayMonth(parseInt(e.target.value));
@@ -51,7 +58,7 @@ function Calendar() {
 
   return (
     <div className="cardContainer">
-      <div className="calendarItem">
+      <div className="calendarItemContainer">
         <div className="calendarItem">
           <select
             className="monthSelect"
@@ -71,8 +78,15 @@ function Calendar() {
             <option value="11">November</option>
             <option value="12">December</option>
           </select>
+          <div className="focus">
+            <h2>Focus</h2>
+            <BlockNoteView editor={editor} />;
+          </div>
+          <div className="task">
+            <h2>Tasks</h2>
+          </div>
         </div>
-        <div className="flexList">{renderDivs}</div>
+        <div className="calendarFlexList">{renderDivs}</div>
       </div>
     </div>
   );

@@ -8,8 +8,10 @@ function Tasks() {
   const taskList = tasks.map((task) => <NoteItem key={task.id} note={task} />);
   return (
     <div className="cardContainer">
-      <h1 className="center">Task List</h1>
-      {taskList}
+      <div className="ideaContainer">
+        <h1 className="center">Task List</h1>
+        {taskList}
+      </div>
     </div>
   );
 }

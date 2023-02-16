@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useCurrentDate, useUpdateNotes, useNotes } from "./Context";
+import CalendarNoteIcon from "./Icons/CalendarNoteIcon";
 
 function Intake() {
   const [note, setNote] = useState("");
