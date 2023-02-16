@@ -5,23 +5,29 @@ body {
     font-family: arial;
   }
 
-  .card{
+  .navBarContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+      }
+
+  .navBarItem{
+    display: flex;
+    align-self: center;
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .cardContainer{
+    display: flex;
     width: 550px;
     border-style: outset;
     border-color: #b7b7b7b2;
     background-color: #f2f2f2;
     border-radius: 15px;
-    margin: 5px
-  }
-  .day{
-    font-weight: bold;
-    margin: 5px;
-    display: flex;
-  }
-  .dayEvent{
-    font-weight: 100;
-    display: flex;
-    margin-left: 3px;
+    margin: 20px
   }
 
   .button{
@@ -41,6 +47,18 @@ body {
     color: #f2f2f2
 
   }
+
+  .day{
+    font-weight: bold;
+    margin: 5px;
+    display: flex;
+  }
+  .dayEvent{
+    font-weight: 100;
+    display: flex;
+    margin-left: 3px;
+  }
+
   .monthSelect{
     background-color: #f2f2f2;
     border-style: none;
@@ -49,10 +67,8 @@ body {
     margin: auto;
     font-weight: bold;
   }
-  .navBar {
-margin-bottom: 10px;
 
-  }
+  
   .form{
     margin: 10px
   }
@@ -66,11 +82,12 @@ margin-bottom: 10px;
   }
 
   .noteInput{
-    width : 60%;
-    margin: 3;
+    width : 80%;
+    margin-top: 15px;
     border-style: none;
     padding: 10px 20px;
     border-radius: 12px;
+    background-color: #F2F2F2F2;
   }
 
   .item {
@@ -79,4 +96,15 @@ margin: 5px
   }
   .center{
 text-align: center;
+  }
+
+  .additionalNotes {
+    width: 500px;
+    height: 60px;
+    border-style: dotted;
+    background-color: #f3efef96
+  }
+
+  .noteBox{
+    margin: 20px
   }

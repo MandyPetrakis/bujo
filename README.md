@@ -13,9 +13,10 @@ Future updates will include:
 - the ability to add due dates to tasks
 - the daily view will show todays tasks, events, as well as un dated tasks
 - the option to generate a random idea note that you may have forgotten about to sparl creativity
+- adding the day of the week to the monthly view page
 
 ## Acknowedgement
 
-Visit https://bulletjournal.com/ to learn more about the bullet journal note taking method!
+Visit https://bulletjournal.com/ to learn more about the bullet journal note taking method! (It may change your life)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -11,7 +11,7 @@ function RapidLog() {
   ));
 
   return (
-    <div className="card">
+    <div className="cardContainer">
       <h2 className="center">Today's Rapid Log</h2>
       <div>{notesList}</div>
     </div>

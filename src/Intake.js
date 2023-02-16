@@ -43,6 +43,7 @@ function Intake() {
       eventMonth: eventMonth,
       eventYear: eventYear,
       dateCreated: today,
+      additionalNotes: null,
     };
 
     fetch("http://localhost:3000/notes", {
@@ -59,7 +60,7 @@ function Intake() {
   }
 
   return (
-    <div className="card">
+    <div className="cardContainer">
       <form className="form" onSubmit={onSubmit}>
         <select
           value={type}

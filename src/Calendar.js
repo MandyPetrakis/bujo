@@ -50,7 +50,7 @@ function Calendar() {
   });
 
   return (
-    <div className="card">
+    <div className="cardContainer">
       <div className="center">
         <select
           className="monthSelect"

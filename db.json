@@ -8,6 +8,7 @@
       "eventMonth": "03",
       "eventYear": "2023",
       "dateCreated": "2023-2-11",
+      "additionalNotes": null,
       "id": 2
     },
     {
@@ -18,6 +19,7 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-11",
+      "additionalNotes": null,
       "id": 3
     },
     {
@@ -25,6 +27,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-11",
+      "additionalNotes": "lalalala",
       "id": 4
     },
     {
@@ -35,6 +38,7 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-11",
+      "additionalNotes": null,
       "id": 5
     },
     {
@@ -42,6 +46,7 @@
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 6
     },
     {
@@ -49,6 +54,7 @@
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 7
     },
     {
@@ -59,6 +65,7 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 8
     },
     {
@@ -69,6 +76,7 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 9
     },
     {
@@ -79,6 +87,7 @@
       "eventMonth": "06",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 10
     },
     {
@@ -89,6 +98,7 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 11
     },
     {
@@ -96,6 +106,7 @@
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 12
     },
     {
@@ -103,6 +114,7 @@
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 13
     },
     {
@@ -110,6 +122,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 14
     },
     {
@@ -120,6 +133,7 @@
       "eventMonth": "08",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 15
     },
     {
@@ -130,7 +144,64 @@
       "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-2-13",
+      "additionalNotes": null,
       "id": 16
+    },
+    {
+      "details": "Call California Spine",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 17
+    },
+    {
+      "details": "Phase 2 Blog: context?",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 18
+    },
+    {
+      "details": "Blog: callback functions.",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 19
+    },
+    {
+      "details": "Storyworthy | Book",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 20
+    },
+    {
+      "details": "Then thousand flowers in the spring, the moon in autumn. A cool breeze in summer, snow in winter. If your mind isn't clouded be unnecessary things, this is the best season of your life. - Wu Min ",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 21
+    },
+    {
+      "details": "Astian + Josh gift and note",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 22
+    },
+    {
+      "details": "Stick to your knitting ",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-2-15",
+      "additionalNotes": null,
+      "id": 23
     }
   ]
 }

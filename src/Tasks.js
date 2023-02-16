@@ -7,7 +7,7 @@ function Tasks() {
   const tasks = notes.filter((note) => note.type === "task");
   const taskList = tasks.map((task) => <NoteItem key={task.id} note={task} />);
   return (
-    <div className="card">
+    <div className="cardContainer">
       <h1 className="center">Task List</h1>
       {taskList}
     </div>
