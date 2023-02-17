@@ -31,53 +31,15 @@
       "id": 4
     },
     {
-      "details": "Park date with lulu crew",
-      "type": "event",
-      "eventDate": "2023-02-12",
-      "eventDay": "12",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-11",
-      "additionalNotes": null,
-      "id": 5
-    },
-    {
-      "details": "Walk Fred",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 6
-    },
-    {
       "details": "Taxes",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
       "additionalNotes": null,
-      "id": 7
-    },
-    {
-      "details": "Valentines Day",
-      "type": "event",
-      "eventDate": "2023-02-14",
-      "eventDay": "14",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 8
-    },
-    {
-      "details": "Astian on vacation",
-      "type": "event",
-      "eventDate": "2023-02-19",
-      "eventDay": "19",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 9
+      "id": 7,
+      "urgent": false,
+      "important": true,
+      "complete": false
     },
     {
       "details": "My Birthday",
@@ -107,7 +69,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-13",
       "additionalNotes": null,
-      "id": 12
+      "id": 12,
+      "urgent": false,
+      "important": true,
+      "complete": false
     },
     {
       "details": "Phase 2 lectures",
@@ -115,7 +80,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-13",
       "additionalNotes": null,
-      "id": 13
+      "id": 13,
+      "urgent": false,
+      "important": true,
+      "complete": false
     },
     {
       "details": "Research Greek Mythology books ",
@@ -153,7 +121,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-15",
       "additionalNotes": null,
-      "id": 17
+      "id": 17,
+      "urgent": false,
+      "important": false,
+      "complete": false
     },
     {
       "details": "Phase 2 Blog: context?",
@@ -161,7 +132,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-15",
       "additionalNotes": null,
-      "id": 18
+      "id": 18,
+      "urgent": true,
+      "important": true,
+      "complete": false
     },
     {
       "details": "Blog: callback functions.",
@@ -169,15 +143,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-15",
       "additionalNotes": null,
-      "id": 19
-    },
-    {
-      "details": "Storyworthy | Book",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-15",
-      "additionalNotes": null,
-      "id": 20
+      "id": 19,
+      "urgent": false,
+      "important": false,
+      "complete": false
     },
     {
       "details": "Then thousand flowers in the spring, the moon in autumn. A cool breeze in summer, snow in winter. If your mind isn't clouded be unnecessary things, this is the best season of your life. - Wu Min ",
@@ -193,7 +162,10 @@
       "eventDate": null,
       "dateCreated": "2023-2-15",
       "additionalNotes": null,
-      "id": 22
+      "id": 22,
+      "urgent": true,
+      "important": true,
+      "complete": false
     },
     {
       "details": "Stick to your knitting ",
@@ -202,6 +174,74 @@
       "dateCreated": "2023-2-14",
       "additionalNotes": null,
       "id": 23
+    },
+    {
+      "details": "Buy ingredients for todd",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-16",
+      "additionalNotes": null,
+      "urgent": true,
+      "important": true,
+      "complete": false,
+      "id": 24
+    },
+    {
+      "details": "Valentines Day",
+      "type": "event",
+      "eventDate": "2023-02-14",
+      "eventDay": "14",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-16",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 25
+    },
+    {
+      "details": "Hang with Jackie + Zan",
+      "type": "event",
+      "eventDate": "2023-02-18",
+      "eventDay": "18",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-16",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 26
+    },
+    {
+      "details": "Dinner with Emiliano",
+      "type": "event",
+      "eventDate": "2023-02-17",
+      "eventDay": "17",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-16",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 27
+    },
+    {
+      "details": "Astian on vacation",
+      "type": "event",
+      "eventDate": "2023-02-19",
+      "eventDay": "19",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-16",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 28
     }
-  ]
+  ],
+  "months": {}
 }

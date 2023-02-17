@@ -5,6 +5,8 @@ body {
     font-family: arial;
   }
 
+  /* NavBar */
+
   .navBarContainer {
     display: flex;
     justify-content: space-around;
@@ -21,13 +23,21 @@ body {
   }
 
   .cardContainer{
-
     border-style: outset;
     border-color: #b7b7b7b2;
     background-color: #f2f2f2;
     border-radius: 15px;
     margin: 20px;
+    border-width: 2px;
   }
+  .center{
+  text-align: center;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  }
+  
+  /* Intake  */
   
   .cardItem{
     display: flex;
@@ -48,7 +58,7 @@ body {
 
   .cardItem2{
     flex-grow: 3;
-    width: 90%;
+    width: 80%;
     border-style: none;
     padding: 10px;
     border-radius: 12px;
@@ -65,11 +75,23 @@ body {
     padding-left: 5px;
     border-style: none;
   }
+
+  .taskUI{
+    display: flex;
+    justify-content: center;
+  }
+  .checkBoxContainer{
+display: flex;
+justify-content: center;
+  }
+
+   .cardItem4{
+    align-self: center;
+   }
   
     .flexList{
       display: flex;
       flex-direction: column;
-      margin: 20px;
     }
   
   .button{
@@ -121,7 +143,7 @@ body {
     flex-direction: column;
     margin: 20px;
     flex-grow: 1;
-    flex-shrink: 0;
+
   }
   
   .day{
@@ -129,6 +151,38 @@ body {
     margin: 5px;
     display: flex;
     flex-wrap: nowrap;
+    border-bottom: 1px solid #b7b7b7b2;
+  }
+  .currentDay{
+    width: 10px;
+  }
+  .dayItem{
+    align-self: flex-end;
+    width: 60px;
+    align-items: end;
+    flex-wrap: nowrap;
+    flex: none;
+    display: flex;
+
+    justify-content:flex-end;
+  }
+  .dayNumber{
+  width:18px;
+  text-align: right;
+
+  }
+  .dayLine{
+width: 10px;
+text-align: center;
+  }
+  .dayDay{
+    width: 15px;
+    text-align:center;
+  }
+
+  .eventItem{
+    display: flex;
+    flex-wrap: wrap;
   }
   .dayEvent{
     font-weight: 100;
@@ -137,23 +191,38 @@ body {
   .calendarItemContainer{
     display: flex;
     align-items: start;
-  }
 
+  }
+/* Note Item  */
 
   .item {
     padding: 2px;
     margin: 5px;
     width: 100%;
+    display: flex;
+    height: 20px
   }
+.actions{
+  display: flex;
+  align-items: flex-start;
+}
 
-  .center{
-text-align: center;
-  }
+.editButton{
+  height: 20px;
+  width:20px;
+  border: none;
+}
+
+.deleteButton{
+  height: 20px;
+  width:20px;
+  border: none;
+}
 
 .ideaContainer{
   display: flex;
   flex-direction: column;
-  margin: 20px
+  margin: 20px;
 }
   .additionalNotes {
     width: 500px;
@@ -164,6 +233,30 @@ text-align: center;
 
   .noteBox{
     margin: 20px;
+  }
 
+  /* Tasks */
+
+  .taskFlexContainer{
+    display: flex;
+    align-items: stretch;
+    margin-left: 15px;
+    margin-right:15px;
+    margin-bottom: 10px
 
   }
+  .taskItem{
+    width: 50%;
+    height: 300px;
+    border-style: outset;
+    border-color: #b7b7b7b2;
+    background-color: #f2f2f2;
+    border-width: 1px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+.taskList{
+  margin: 10px
+}
+

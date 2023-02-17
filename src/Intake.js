@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { useCurrentDate, useUpdateNotes, useNotes } from "./Context";
-import CalendarNoteIcon from "./Icons/CalendarNoteIcon";
 
 function Intake() {
   const [note, setNote] = useState("");
@@ -13,6 +12,8 @@ function Intake() {
   const today = useCurrentDate();
   const updateNotes = useUpdateNotes();
   const notes = useNotes();
+  const [urgent, setUrgent] = useState(false);
+  const [important, setImportant] = useState(false);
 
   function handleDateChange(e) {
     setEventDate(e.target.value);
@@ -23,14 +24,6 @@ function Intake() {
     setEventDay(day);
     setEventMonth(month);
     setEventYear(year);
-  }
-
-  function handleNoteChange(e) {
-    setNote(e.target.value);
-  }
-
-  function handleTypeChange(e) {
-    setType(e.target.value);
   }
 
   function onSubmit(e) {
@@ -45,6 +38,9 @@ function Intake() {
       eventYear: eventYear,
       dateCreated: today,
       additionalNotes: null,
+      urgent: urgent,
+      important: important,
+      complete: false,
     };
 
     fetch("http://localhost:3000/notes", {
@@ -58,6 +54,8 @@ function Intake() {
       .then((data) => updateNotes([...notes, data]));
     setNote("");
     setType("task");
+    setUrgent(false);
+    setImportant(false);
   }
 
   return (
@@ -68,7 +66,7 @@ function Intake() {
             value={type}
             className="cardItem1"
             name="type"
-            onChange={handleTypeChange}
+            onChange={(e) => setType(e.target.value)}
           >
             <option value="task"> ● </option>
             <option value="event">O</option>
@@ -80,7 +78,7 @@ function Intake() {
             name="note"
             value={note}
             placeholder="What do you want to remember?"
-            onChange={handleNoteChange}
+            onChange={(e) => setNote(e.target.value)}
           />
 
           {type === "event" ? (
@@ -92,6 +90,38 @@ function Intake() {
                 onChange={handleDateChange}
                 ref={dateInputRef}
               />
+            </>
+          ) : null}
+          {type === "task" ? (
+            <>
+              <div className="checkBoxContainer">
+                <div className="taskUI">
+                  <label>
+                    Urgent:
+                    <input
+                      className="cardItem4"
+                      type="checkBox"
+                      onChange={() => setUrgent(!urgent)}
+                      checked={urgent}
+                      ref={dateInputRef}
+                    />
+                  </label>
+                </div>
+                <div className="taskUI">
+                  <label>
+                    Important:
+                    <div className="cardItem4">
+                      <input
+                        className="cardItem4"
+                        type="checkBox"
+                        checked={important}
+                        onChange={() => setImportant(!important)}
+                        ref={dateInputRef}
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
             </>
           ) : null}
         </div>

@@ -1,42 +1,35 @@
-import React, { useState, useEffect } from "react";
-import {
-  useCurrentDate,
-  useCurrentMonth,
-  useCurrentYear,
-  useNotes,
-} from "./Context";
-import { BlockNoteView, useBlockNote } from "@blocknote/react";
-import "@blocknote/core/style.css";
+import React from "react";
+import { useCurrentDate, useCurrentYear, useNotes } from "./Context";
+import { LocalDate } from "@js-joda/core";
+import CalendarEvent from "./CalendarEvent";
 
-function Calendar() {
-  const today = useCurrentDate();
-  const currentMonth = useCurrentMonth();
+function Calendar({ displayMonth }) {
   const year = useCurrentYear();
   const notes = useNotes();
-  const [displayMonth, setDisplayMonth] = useState(currentMonth);
-  const editor = useBlockNote({
-    onUpdate: ({ editor }) => {
-      console.log(editor.getJSON());
-    },
-  });
-
-  function handleChange(e) {
-    setDisplayMonth(parseInt(e.target.value));
-  }
-
-  function daysInMonth(y, m) {
-    return new Date(year, displayMonth, 0).getDate();
-  }
+  const currentDate = useCurrentDate();
+  console.log(currentDate);
 
   const daysArray = [];
 
   function createArray() {
-    for (let i = 0; i < daysInMonth(); i++) {
-      if (i < 9) {
-        daysArray.push({ day: "0" + (i + 1) });
-      } else daysArray.push({ day: i + 1 });
+    const displayMonthDetails = LocalDate.of(
+      parseInt(year),
+      parseInt(displayMonth),
+      1
+    );
+
+    for (let i = 1; i < displayMonthDetails.lengthOfMonth() + 1; i++) {
+      daysArray.push({
+        day: i,
+        dayOfWeek: LocalDate.of(
+          parseInt(year),
+          parseInt(displayMonth),
+          i
+        ).dayOfWeek(),
+      });
     }
   }
+
   createArray();
 
   const renderDivs = daysArray.map((day) => {
@@ -45,51 +38,27 @@ function Calendar() {
     );
 
     return (
-      <div className="day" key={day.day}>
-        {day.day} :
-        {dailyEvents.map((event) => (
-          <div key={event.id} className="dayEvent">
-            {event.details}.
+      <>
+        <div className="day" key={day.day}>
+          <div className="dayItem">
+            {currentDate._day == day.day ? (
+              <div className="currentDay">></div>
+            ) : null}
+            <div className="dayNumber">{day.day}</div>
+            <div className="dayLine"> | </div>
+            <div className="dayDay">{day.dayOfWeek._name.charAt(0)}</div>:
           </div>
-        ))}
-      </div>
+          <div className="eventItem">
+            {dailyEvents.map((event) => (
+              <CalendarEvent key={event.id} event={event} />
+            ))}
+          </div>
+        </div>
+      </>
     );
   });
 
-  return (
-    <div className="cardContainer">
-      <div className="calendarItemContainer">
-        <div className="calendarItem">
-          <select
-            className="monthSelect"
-            value={displayMonth}
-            onChange={handleChange}
-          >
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <div className="focus">
-            <h2>Focus</h2>
-            <BlockNoteView editor={editor} />;
-          </div>
-          <div className="task">
-            <h2>Tasks</h2>
-          </div>
-        </div>
-        <div className="calendarFlexList">{renderDivs}</div>
-      </div>
-    </div>
-  );
+  return <div className="calendarFlexList">{renderDivs}</div>;
 }
 
 export default Calendar;

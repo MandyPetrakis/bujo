@@ -1,4 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
+import { LocalDate } from "@js-joda/core";
 
 const CurrentDate = React.createContext();
 const Notes = React.createContext();
@@ -32,19 +33,13 @@ function ContextProvider({ children }) {
   const [currentYear, setCurrentYear] = useState();
 
   useEffect(() => {
-    const dateDetails = new Date();
-    const currentDay =
-      dateDetails.getFullYear() +
-      "-" +
-      (dateDetails.getMonth() + 1) +
-      "-" +
-      dateDetails.getDate();
+    const dateDetails = LocalDate.now();
+    const month = dateDetails.monthValue();
+    const year = dateDetails.year();
 
-    const month = dateDetails.getMonth() + 1;
-    const year = dateDetails.getFullYear();
     setCurrentYear(year);
     setCurrentMonth(month);
-    setToday(currentDay);
+    setToday(dateDetails);
   }, []);
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import React from "react";
 import DailyLog from "./DailyLog";
 import "./App.css";
 import NavBar from "./NavBar";
-import Calendar from "./Calendar";
+import MonthView from "./MonthView";
 import Tasks from "./Tasks";
 import Ideas from "./Ideas";
 import { Route, Switch } from "react-router-dom";
@@ -16,7 +16,7 @@ function App() {
           <DailyLog />
         </Route>
         <Route path="/calendar">
-          <Calendar />
+          <MonthView />
         </Route>
         <Route path="/ideas">
           <Ideas />
