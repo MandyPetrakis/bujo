@@ -7,7 +7,6 @@ function Calendar({ displayMonth }) {
   const year = useCurrentYear();
   const notes = useNotes();
   const currentDate = useCurrentDate();
-  console.log(currentDate);
 
   const daysArray = [];
 

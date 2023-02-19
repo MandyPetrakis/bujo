@@ -1,64 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNotes } from "./Context";
 import NoteItem from "./NoteItem";
 
 function Tasks() {
   const notes = useNotes();
   const tasks = notes.filter((note) => note.type === "task");
+  const [showComplete, setShowComplete] = useState(false);
+
+  const completedTasks = notes
+    .filter((note) => note.complete === true)
+    .map((task) => <NoteItem key={task.id} note={task} />);
 
   return (
-    <div className="cardContainer">
+    <div className="taskContainer">
       <h1 className="center">Tasks</h1>
-      <div className="taskFlexContainer">
-        <div className="taskItem">
-          <h2 className="center">Do</h2>
-          <div className="taskList">
-            {tasks
-              .filter((task) => task.urgent === true && task.important === true)
-              .map((task) => (
-                <NoteItem key={task.id} note={task} />
-              ))}
+      <label className="checkbox">
+        Show completed tasks.
+        <input
+          type="checkbox"
+          onChange={() => setShowComplete(!showComplete)}
+        />
+        <br />
+      </label>
+      <div className="allTasks">
+        <div className="todoTasks">
+          <div className="taskFlexContainer">
+            <div className="taskItem">
+              <h2 className="center">Do</h2>
+              <div className="taskList">
+                {tasks
+                  .filter(
+                    (task) =>
+                      task.urgent === true &&
+                      task.important === true &&
+                      task.complete == false
+                  )
+                  .map((task) => (
+                    <NoteItem key={task.id} note={task} />
+                  ))}
+              </div>
+            </div>
+            <div className="taskItem">
+              <h2 className="center">Schedule</h2>
+              <div className="taskList">
+                {tasks
+                  .filter(
+                    (task) =>
+                      task.urgent === false &&
+                      task.important === true &&
+                      task.complete == false
+                  )
+                  .map((task) => (
+                    <NoteItem key={task.id} note={task} />
+                  ))}
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="taskItem">
-          <h2 className="center">Schedule</h2>
-          <div className="taskList">
-            {tasks
-              .filter(
-                (task) => task.urgent === false && task.important === true
-              )
-              .map((task) => (
-                <NoteItem key={task.id} note={task} />
-              ))}
-          </div>
-        </div>
-      </div>
 
-      <div className="taskFlexContainer">
-        <div className="taskItem">
-          <h2 className="center">Delegate</h2>
-          <div className="taskList">
-            {tasks
-              .filter(
-                (task) => task.urgent === true && task.important === false
-              )
-              .map((task) => (
-                <NoteItem key={task.id} note={task} />
-              ))}
+          <div className="taskFlexContainer">
+            <div className="taskItem">
+              <h2 className="center">Delegate</h2>
+              <div className="taskList">
+                {tasks
+                  .filter(
+                    (task) =>
+                      task.urgent === true &&
+                      task.important === false &&
+                      task.complete == false
+                  )
+                  .map((task) => (
+                    <NoteItem key={task.id} note={task} />
+                  ))}
+              </div>
+            </div>
+            <div className="taskItem">
+              <h2 className="center">Eliminate</h2>
+              <div className="taskList">
+                {tasks
+                  .filter(
+                    (task) =>
+                      task.urgent === false &&
+                      task.important === false &&
+                      task.complete == false
+                  )
+                  .map((task) => (
+                    <NoteItem key={task.id} note={task} />
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="taskItem">
-          <h2 className="center">Eliminate</h2>
-          <div className="taskList">
-            {tasks
-              .filter(
-                (task) => task.urgent === false && task.important === false
-              )
-              .map((task) => (
-                <NoteItem key={task.id} note={task} />
-              ))}
+        {showComplete ? (
+          <div className="completed">
+            <h2 className="center">Complete</h2>
+            {completedTasks}
           </div>
-        </div>
+        ) : null}
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import CalendarIcon from "./Icons/ CalendarIcon";
 import ListIcon from "./Icons/ListIcon";
 import LogIcon from "./Icons/LogIcon";
 import IdeaIcon from "./Icons/IdeaIcon";
+import BulbIcon from "./Icons/BuldIcon";
 
 const linkStyles = {
   display: "flex",
@@ -66,7 +67,7 @@ function NavBar() {
           borderRadius: "12px",
         }}
       >
-        <IdeaIcon />
+        <BulbIcon />
       </NavLink>
     </div>
   );

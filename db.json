@@ -23,14 +23,6 @@
       "id": 3
     },
     {
-      "details": "Corporate Org Chart",
-      "type": "idea",
-      "eventDate": null,
-      "dateCreated": "2023-2-11",
-      "additionalNotes": "lalalala",
-      "id": 4
-    },
-    {
       "details": "Taxes",
       "type": "task",
       "eventDate": null,
@@ -165,7 +157,7 @@
       "id": 22,
       "urgent": true,
       "important": true,
-      "complete": false
+      "complete": true
     },
     {
       "details": "Stick to your knitting ",
@@ -176,14 +168,14 @@
       "id": 23
     },
     {
-      "details": "Buy ingredients for todd",
+      "details": "Buy ingredients for Todd",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-02-16",
       "additionalNotes": null,
       "urgent": true,
       "important": true,
-      "complete": false,
+      "complete": true,
       "id": 24
     },
     {
@@ -241,7 +233,43 @@
       "important": false,
       "complete": false,
       "id": 28
+    },
+    {
+      "details": "Corporate Org Chart",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-02-18",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 29
     }
   ],
-  "months": {}
+  "goals": [
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-18",
+      "details": "Complete Phase 2",
+      "id": 1,
+      "category": "career"
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-18",
+      "details": "Consistent bed time",
+      "category": "rest",
+      "id": 2
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-18",
+      "details": "3x/week Workout",
+      "category": "fitness",
+      "id": 3
+    }
+  ]
 }

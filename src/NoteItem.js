@@ -5,6 +5,7 @@ import "@blocknote/core/style.css";
 import Pencil from "./Icons/Pencil";
 import Delete from "./Icons/Delete";
 import EditNote from "./EditNote";
+import BulbLi from "./Icons/BulbLi";
 
 function NoteItem({ note }) {
   const [completed, setCompleted] = useState(note.complete);
@@ -14,42 +15,6 @@ function NoteItem({ note }) {
   const updateNotes = useUpdateNotes();
   const [hover, setHover] = useState(false);
   const [editing, setEditing] = useState(false);
-
-  // const editor = useBlockNote({
-  //   onUpdate: ({ editor }) => {
-  //     console.log(editor.getJSON());
-  //   },
-  // });
-
-  // function handleIdeaClick() {
-  //   setExpand(!expand);
-  // }
-
-  // function handleChange(e) {
-  //   setAdditionalDetails(e.target.value);
-  // }
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   fetch(`http://localhost:3000/notes/${note.id}`, {
-  //     method: "PATCH",
-
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ additionalNotes: additionalDetails }),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((data) => {
-  //       const updatedNotes = notes.map((note) => {
-  //         if (note.id === data.id) {
-  //           return data;
-  //         } else return note;
-  //       });
-  //       updateNotes(updatedNotes);
-  //     });
-  // }
 
   function handleDelete() {
     fetch(`http://localhost:3000/notes/${note.id}`, {
@@ -66,16 +31,20 @@ function NoteItem({ note }) {
       });
   }
 
-  function handleEdit() {
+  function onComplete() {
     fetch(`http://localhost:3000/notes/${note.id}`, {
       method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ complete: !note.complete }),
     })
       .then((r) => r.json())
-      .then(() => {
-        let updatedNotes = notes.filter((noteA) => {
-          if (note.id === noteA.id) {
-            return null;
-          } else return noteA;
+      .then((data) => {
+        let updatedNotes = notes.map((note) => {
+          if (data.id === note.id) {
+            return data;
+          } else return note;
         });
         updateNotes(updatedNotes);
       });
@@ -88,17 +57,26 @@ function NoteItem({ note }) {
         onMouseLeave={() => setHover(false)}
         className="item"
       >
-        <div onClick={() => setCompleted(!completed)}>
-          {completed ? "X" : "●"}{" "}
-          {editing ? (
-            <EditNote
-              body={note.details}
-              resetEdit={() => setEditing(false)}
-              noteId={note.id}
-            />
-          ) : (
-            note.details
-          )}
+        <div
+          className="itemChild"
+          onClick={() => {
+            setCompleted(!completed);
+            onComplete();
+          }}
+        >
+          {completed ? " X " : " ● "}
+          <div className="itemChild">
+            {editing ? (
+              <EditNote
+                body={note.details}
+                resetEdit={() => setEditing(false)}
+                noteId={note.id}
+                className="itemChild"
+              />
+            ) : (
+              <div>{note.details}</div>
+            )}
+          </div>
         </div>
         {hover ? (
           <div className="actions">
@@ -146,21 +124,37 @@ function NoteItem({ note }) {
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        <div className="item">! {note.details}</div>
-        {hover ? (
-          <div className="actions">
-            <button className="editButton">
-              <span role="img" aria-label="edit">
-                <Pencil />
-              </span>
-            </button>
-            <button className="deleteButton">
-              <span role="img" aria-label="edit">
-                <Delete />
-              </span>
-            </button>
-          </div>
-        ) : null}
+        <div className="itemChild">
+          {editing ? (
+            <EditNote
+              body={note.details}
+              resetEdit={() => setEditing(false)}
+              noteId={note.id}
+              className="itemChild"
+            />
+          ) : (
+            <div>
+              <BulbLi /> {note.details}
+            </div>
+          )}
+          {hover ? (
+            <div className="actions">
+              <button
+                className="editButton"
+                onClick={() => setEditing(!editing)}
+              >
+                <span role="img" aria-label="edit">
+                  <Pencil />
+                </span>
+              </button>
+              <button className="deleteButton" onClick={handleDelete}>
+                <span role="img" aria-label="edit">
+                  <Delete />
+                </span>
+              </button>
+            </div>
+          ) : null}
+        </div>
       </div>
     );
   }

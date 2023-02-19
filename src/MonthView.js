@@ -3,35 +3,57 @@ import {
   useCurrentDate,
   useCurrentMonth,
   useCurrentYear,
-  useNotes,
+  useGoalsList,
+  useUpdateGoalsList,
 } from "./Context";
-import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import "@blocknote/core/style.css";
 import { LocalDate, DateTimeFormatter } from "@js-joda/core";
 import MonthlyTasks from "./MonthlyTasks";
-import Pencil from "./Icons/Pencil";
-import Delete from "./Icons/Delete";
 import Calendar from "./Calendar";
 
 function MonthView() {
   const today = useCurrentDate();
-  const currentMonth = useCurrentMonth();
-  const year = useCurrentYear();
-  const notes = useNotes();
-  const [hover, setHover] = useState(false);
-
+  const currentMonth = useCurrentMonth() || 12;
+  const year = useCurrentYear() || 2023;
   const [displayMonth, setDisplayMonth] = useState(currentMonth);
-
-  const editor = useBlockNote({
-    onUpdate: ({ editor }) => {
-      fetch(`http://localhost:3000/months/`);
-      console.log(editor.getJSON());
-    },
-  });
+  const goalsList = useGoalsList();
+  const updateGoalsList = useUpdateGoalsList();
+  const [goal, setGoal] = useState("");
+  const [category, setCategory] = useState("");
 
   function handleChange(e) {
     setDisplayMonth(parseInt(e.target.value));
   }
+  function goalSubmit(e) {
+    e.preventDefault();
+    const newGoal = {
+      year: year,
+      month: displayMonth,
+      dateCreated: today,
+      details: goal,
+      category: category,
+    };
+
+    fetch("http://localhost:3000/goals", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newGoal),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        const updatedGoals = [...goalsList, data];
+        updateGoalsList(updatedGoals);
+      });
+    setGoal("");
+    setCategory("");
+  }
+
+  const renderGoals = goalsList
+    .filter((goal) => goal.month === displayMonth)
+    .map((goal) => <li key={goal.id}>{goal.details}</li>);
+
   return (
     <div className="cardContainer">
       <div className="calendarItemContainer">
@@ -55,8 +77,32 @@ function MonthView() {
             <option value="12">December</option>
           </select>
           <div className="focus">
-            <h2>Focus</h2>
-            <BlockNoteView editor={editor} />
+            <h2 className="center">Goals</h2>
+            {renderGoals}
+            <div className="goalSetContainer">
+              <form onSubmit={goalSubmit}>
+                <input
+                  type="text"
+                  className="editBox"
+                  value={goal}
+                  onChange={(e) => setGoal(e.target.value)}
+                />
+                <select
+                  value={category}
+                  className="categorySelect"
+                  onChange={(e) => setCategory(e.target.value)}
+                >
+                  <option disabled selected value="">
+                    Category
+                  </option>
+                  <option value="career">Career</option>
+                  <option value="fitness">Fitness</option>
+                  <option value="relationships">Relationships</option>
+                  <option value="rest">Rest</option>
+                </select>
+                <input type="submit" value="Set it!" className="goalSubmit" />
+              </form>
+            </div>
           </div>
           <MonthlyTasks displayMonth={displayMonth} />
         </div>
