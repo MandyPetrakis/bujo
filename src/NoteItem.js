@@ -3,7 +3,7 @@ import { useUpdateNotes, useNotes } from "./Context";
 import EditNote from "./EditNote";
 import { Pencil, Delete, BulbLiIcon } from "./Icons";
 
-function NoteItem({ note }) {
+function NoteItem({ note, onIdeaClick }) {
   const [completed, setCompleted] = useState(note.complete);
   const [notes, setNotes] = useNotes();
   const [hover, setHover] = useState(false);
@@ -116,30 +116,14 @@ function NoteItem({ note }) {
       <div
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
+        onClick={() => onIdeaClick(note)}
       >
         <div className="itemChild">
-          {editing ? (
-            <EditNote
-              body={note.details}
-              resetEdit={() => setEditing(false)}
-              noteId={note.id}
-              className="itemChild"
-            />
-          ) : (
-            <div>
-              <BulbLiIcon /> {note.details}
-            </div>
-          )}
+          <div>
+            <BulbLiIcon /> {note.details}
+          </div>
           {hover ? (
             <div className="actions">
-              <button
-                className="editButton"
-                onClick={() => setEditing(!editing)}
-              >
-                <span role="img" aria-label="edit">
-                  <Pencil />
-                </span>
-              </button>
               <button className="deleteButton" onClick={handleDelete}>
                 <span role="img" aria-label="edit">
                   <Delete />

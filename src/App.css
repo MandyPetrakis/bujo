@@ -266,12 +266,37 @@ text-align: center;
 
 /* Ideas  */
 
-.ideaContainer{
+.allIdeas{
   display: flex;
-  flex-direction: column;
-  margin: 20px;
 }
 
+.ideaContainer{
+  display: flex;
+  font-size: 20px;
+  flex-direction: column;
+  margin: 20px;
+  border: solid;
+  border-style: outset;
+  border-color: #b7b7b7b2;
+  background-color: #f2f2f2;
+  border-width: 1px;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.ideaDetails{
+  font-size: 20px;
+  width: 100%;
+  border: solid;
+  border-style: outset;
+  border-color: #b7b7b7b2;
+  background-color: #f2f2f2;
+  border-width: 1px;
+  border-radius: 15px;
+  margin: 20px;
+  padding: 20px
+
+}
   .bulbLi{
     width: 20px;
     height: 20px;
@@ -319,7 +344,6 @@ text-align: center;
 text-align: center;
 color: darkgray;
 margin-top: 0;
-
 }
   .completed {
     border: solid;

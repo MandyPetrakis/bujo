@@ -27,7 +27,7 @@ function Tasks() {
           <div className="taskFlexContainer">
             <div className="taskItem">
               <h2 className="center">Do</h2>
-              <h4 className="subtext">Urgent and Important</h4>
+              <h4 className="subtext">Urgent / Important</h4>
               <div className="taskList">
                 {tasks
                   .filter(
@@ -43,6 +43,7 @@ function Tasks() {
             </div>
             <div className="taskItem">
               <h2 className="center">Schedule</h2>
+              <h4 className="subtext">Not Urgent / Important</h4>
               <div className="taskList">
                 {tasks
                   .filter(
@@ -61,6 +62,7 @@ function Tasks() {
           <div className="taskFlexContainer">
             <div className="taskItem">
               <h2 className="center">Delegate</h2>
+              <h4 className="subtext">Urgent / Not Important</h4>
               <div className="taskList">
                 {tasks
                   .filter(
@@ -76,6 +78,7 @@ function Tasks() {
             </div>
             <div className="taskItem">
               <h2 className="center">Eliminate</h2>
+              <h4 className="subtext">Not Urgent / Not Important</h4>
               <div className="taskList">
                 {tasks
                   .filter(
@@ -94,6 +97,7 @@ function Tasks() {
         {showComplete ? (
           <div className="completed">
             <h2 className="center">Complete</h2>
+            <h4 className="subtext">You did it!</h4>
             {completedTasks}
           </div>
         ) : null}

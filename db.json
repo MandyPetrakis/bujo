@@ -82,7 +82,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-13",
-      "additionalNotes": null,
+      "additionalNotes": "Circe",
       "id": 14
     },
     {
@@ -108,17 +108,6 @@
       "id": 16
     },
     {
-      "details": "Call California Spine",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-15",
-      "additionalNotes": null,
-      "id": 17,
-      "urgent": false,
-      "important": false,
-      "complete": false
-    },
-    {
       "details": "Phase 2 Blog: context?",
       "type": "task",
       "eventDate": null,
@@ -138,7 +127,7 @@
       "id": 19,
       "urgent": false,
       "important": false,
-      "complete": false
+      "complete": true
     },
     {
       "details": "Then thousand flowers in the spring, the moon in autumn. A cool breeze in summer, snow in winter. If your mind isn't clouded be unnecessary things, this is the best season of your life. - Wu Min ",
@@ -303,7 +292,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": false,
-      "complete": true,
+      "complete": false,
       "id": 35
     },
     {
@@ -333,6 +322,20 @@
       "important": false,
       "complete": false,
       "id": 37
+    },
+    {
+      "details": "Call with Brittany | 11am",
+      "type": "event",
+      "eventDate": "2023-02-28",
+      "eventDay": "28",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-21",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 38
     }
   ],
   "goals": [
