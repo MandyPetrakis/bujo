@@ -1,10 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import CalendarIcon from "./Icons/ CalendarIcon";
-import ListIcon from "./Icons/ListIcon";
-import LogIcon from "./Icons/LogIcon";
-import IdeaIcon from "./Icons/IdeaIcon";
-import BulbIcon from "./Icons/BuldIcon";
+import { CalendarIcon, ListIcon, BulbIcon, LogIcon } from "./Icons";
 
 const linkStyles = {
   display: "flex",

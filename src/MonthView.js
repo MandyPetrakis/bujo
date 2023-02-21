@@ -6,8 +6,6 @@ import {
   useGoalsList,
   useUpdateGoalsList,
 } from "./Context";
-import "@blocknote/core/style.css";
-import { LocalDate, DateTimeFormatter } from "@js-joda/core";
 import MonthlyTasks from "./MonthlyTasks";
 import Calendar from "./Calendar";
 
@@ -16,8 +14,7 @@ function MonthView() {
   const currentMonth = useCurrentMonth() || 12;
   const year = useCurrentYear() || 2023;
   const [displayMonth, setDisplayMonth] = useState(currentMonth);
-  const goalsList = useGoalsList();
-  const updateGoalsList = useUpdateGoalsList();
+  const [goalsList, setGoalsList] = useGoalsList();
   const [goal, setGoal] = useState("");
   const [category, setCategory] = useState("");
 
@@ -44,7 +41,7 @@ function MonthView() {
       .then((r) => r.json())
       .then((data) => {
         const updatedGoals = [...goalsList, data];
-        updateGoalsList(updatedGoals);
+        setGoalsList(updatedGoals);
       });
     setGoal("");
     setCategory("");

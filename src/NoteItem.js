@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { useUpdateNotes, useNotes } from "./Context";
-import { BlockNoteView, useBlockNote } from "@blocknote/react";
-import "@blocknote/core/style.css";
-import Pencil from "./Icons/Pencil";
-import Delete from "./Icons/Delete";
 import EditNote from "./EditNote";
-import BulbLi from "./Icons/BulbLi";
+import { Pencil, Delete, BulbLiIcon } from "./Icons";
 
 function NoteItem({ note }) {
   const [completed, setCompleted] = useState(note.complete);
-  const [expand, setExpand] = useState(false);
-  const [additionalDetails, setAdditionalDetails] = useState("");
-  const notes = useNotes();
-  const updateNotes = useUpdateNotes();
+  const [notes, setNotes] = useNotes();
   const [hover, setHover] = useState(false);
   const [editing, setEditing] = useState(false);
 
@@ -27,7 +20,7 @@ function NoteItem({ note }) {
             return null;
           } else return noteA;
         });
-        updateNotes(updatedNotes);
+        setNotes(updatedNotes);
       });
   }
 
@@ -46,7 +39,7 @@ function NoteItem({ note }) {
             return data;
           } else return note;
         });
-        updateNotes(updatedNotes);
+        setNotes(updatedNotes);
       });
   }
 
@@ -134,7 +127,7 @@ function NoteItem({ note }) {
             />
           ) : (
             <div>
-              <BulbLi /> {note.details}
+              <BulbLiIcon /> {note.details}
             </div>
           )}
           {hover ? (

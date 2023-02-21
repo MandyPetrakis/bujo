@@ -3,7 +3,7 @@ import { useNotes } from "./Context";
 import NoteItem from "./NoteItem";
 
 function Tasks() {
-  const notes = useNotes();
+  const [notes, setNotes] = useNotes();
   const tasks = notes.filter((note) => note.type === "task");
   const [showComplete, setShowComplete] = useState(false);
 
@@ -27,6 +27,7 @@ function Tasks() {
           <div className="taskFlexContainer">
             <div className="taskItem">
               <h2 className="center">Do</h2>
+              <h4 className="subtext">Urgent and Important</h4>
               <div className="taskList">
                 {tasks
                   .filter(

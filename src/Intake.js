@@ -10,8 +10,7 @@ function Intake() {
   const [eventYear, setEventYear] = useState();
   const dateInputRef = useRef(null);
   const today = useCurrentDate();
-  const updateNotes = useUpdateNotes();
-  const notes = useNotes();
+  const [notes, setNotes] = useNotes();
   const [urgent, setUrgent] = useState(false);
   const [important, setImportant] = useState(false);
 
@@ -51,7 +50,7 @@ function Intake() {
       body: JSON.stringify(newNote),
     })
       .then((r) => r.json())
-      .then((data) => updateNotes([...notes, data]));
+      .then((data) => setNotes([...notes, data]));
     setNote("");
     setType("task");
     setUrgent(false);

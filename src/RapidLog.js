@@ -3,7 +3,7 @@ import { useCurrentDate, useNotes } from "./Context";
 import NoteItem from "./NoteItem";
 
 function RapidLog() {
-  const notes = useNotes();
+  const [notes, setNotes] = useNotes();
   const today = useCurrentDate();
   const todaysNotes = notes.filter((note) => note.dateCreated == today);
   const notesList = todaysNotes.map((note) => (

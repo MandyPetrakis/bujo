@@ -3,7 +3,7 @@ import NoteItem from "./NoteItem";
 import { useNotes } from "./Context";
 
 function MonthlyTasks({ displayMonth }) {
-  const notes = useNotes();
+  const [notes, setNotes] = useNotes();
   const [showComplete, setShowComplete] = useState(false);
 
   function toggleShowComplete() {

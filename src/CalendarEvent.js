@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import Pencil from "./Icons/Pencil";
-import Delete from "./Icons/Delete";
-import { useUpdateNotes, useNotes } from "./Context";
+import { Delete, Pencil } from "./Icons";
+import { useNotes } from "./Context";
 
 export default function CalendarEvent({ event }) {
   const [hover, setHover] = useState(false);
-  const notes = useNotes();
-  const updateNotes = useUpdateNotes();
+  const [notes, setNotes] = useNotes();
 
   function handleDelete() {
     fetch(`http://localhost:3000/notes/${event.id}`, {
@@ -19,7 +17,7 @@ export default function CalendarEvent({ event }) {
             return null;
           } else return noteA;
         });
-        updateNotes(updatedNotes);
+        setNotes(updatedNotes);
       });
   }
 

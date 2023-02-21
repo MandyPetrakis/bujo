@@ -5,7 +5,7 @@ import CalendarEvent from "./CalendarEvent";
 
 function Calendar({ displayMonth }) {
   const year = useCurrentYear();
-  const notes = useNotes();
+  const [notes, setNotes] = useNotes();
   const currentDate = useCurrentDate();
 
   const daysArray = [];

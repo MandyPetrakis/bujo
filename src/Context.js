@@ -3,11 +3,9 @@ import { LocalDate } from "@js-joda/core";
 
 const CurrentDate = React.createContext();
 const Notes = React.createContext();
-const UpdateNotes = React.createContext();
 const CurrentMonth = React.createContext();
 const CurrentYear = React.createContext();
 const GoalsList = React.createContext();
-const UpdateGoalsList = React.createContext();
 
 export function useCurrentYear() {
   return useContext(CurrentYear);
@@ -24,16 +22,8 @@ export function useNotes() {
   return useContext(Notes);
 }
 
-export function useUpdateNotes(array) {
-  return useContext(UpdateNotes);
-}
-
 export function useGoalsList() {
   return useContext(GoalsList);
-}
-
-export function useUpdateGoalsList() {
-  return useContext(UpdateGoalsList);
 }
 
 function ContextProvider({ children }) {
@@ -74,19 +64,17 @@ function ContextProvider({ children }) {
   }
 
   return (
-    <UpdateGoalsList.Provider value={updateGoalsList}>
-      <GoalsList.Provider value={goalsList}>
-        <CurrentYear.Provider value={currentYear}>
-          <CurrentMonth.Provider value={currentMonth}>
-            <CurrentDate.Provider value={today}>
-              <UpdateNotes.Provider value={updateNotes}>
-                <Notes.Provider value={notes}>{children}</Notes.Provider>
-              </UpdateNotes.Provider>
-            </CurrentDate.Provider>
-          </CurrentMonth.Provider>
-        </CurrentYear.Provider>
-      </GoalsList.Provider>
-    </UpdateGoalsList.Provider>
+    <GoalsList.Provider value={[goalsList, setGoalsList]}>
+      <CurrentYear.Provider value={currentYear}>
+        <CurrentMonth.Provider value={currentMonth}>
+          <CurrentDate.Provider value={today}>
+            <Notes.Provider value={[notes, setNotes]}>
+              {children}
+            </Notes.Provider>
+          </CurrentDate.Provider>
+        </CurrentMonth.Provider>
+      </CurrentYear.Provider>
+    </GoalsList.Provider>
   );
 }
 export default ContextProvider;

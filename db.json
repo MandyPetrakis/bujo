@@ -127,7 +127,7 @@
       "id": 18,
       "urgent": true,
       "important": true,
-      "complete": false
+      "complete": true
     },
     {
       "details": "Blog: callback functions.",
@@ -244,6 +244,95 @@
       "important": false,
       "complete": false,
       "id": 29
+    },
+    {
+      "details": "Call with Julie | 3p",
+      "type": "event",
+      "eventDate": null,
+      "dateCreated": "2023-02-18",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 30
+    },
+    {
+      "details": "Call with Julie | 3p",
+      "type": "event",
+      "eventDate": "2023-02-20",
+      "eventDay": "20",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-18",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 31
+    },
+    {
+      "details": "Craigslist Guy 12p",
+      "type": "event",
+      "eventDate": "2023-02-21",
+      "eventDay": "21",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-20",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 32
+    },
+    {
+      "details": "Cut nails",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-20",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": true,
+      "complete": false,
+      "id": 34
+    },
+    {
+      "details": "Dye my hair ",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-20",
+      "additionalNotes": null,
+      "urgent": true,
+      "important": false,
+      "complete": true,
+      "id": 35
+    },
+    {
+      "details": "Julies Birthday",
+      "type": "event",
+      "eventDate": "2023-10-01",
+      "eventDay": "01",
+      "eventMonth": "10",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-20",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 36
+    },
+    {
+      "details": "a bunch of other things",
+      "type": "event",
+      "eventDate": "2023-02-14",
+      "eventDay": "14",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-20",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 37
     }
   ],
   "goals": [
@@ -270,6 +359,14 @@
       "details": "3x/week Workout",
       "category": "fitness",
       "id": 3
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-20",
+      "details": "Try harder",
+      "category": "career",
+      "id": 4
     }
   ]
 }

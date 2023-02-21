@@ -3,8 +3,7 @@ import { useNotes, useUpdateNotes } from "./Context";
 
 function EditNote({ body, noteId, resetEdit }) {
   const [messageBody, setMessageBody] = useState(body);
-  const notes = useNotes();
-  const updateNotes = useUpdateNotes();
+  const [notes, setNotes] = useNotes();
 
   function handleFormSubmit(e) {
     e.preventDefault();
@@ -22,7 +21,7 @@ function EditNote({ body, noteId, resetEdit }) {
             return data;
           } else return note;
         });
-        updateNotes(updatedNotes);
+        setNotes(updatedNotes);
         resetEdit();
       });
   }
