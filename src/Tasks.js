@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNotes } from "./Context";
 import NoteItem from "./NoteItem";
+import { Close } from "./Icons";
 
 function Tasks() {
   const [notes, setNotes] = useNotes();
@@ -11,17 +12,24 @@ function Tasks() {
     .filter((note) => note.complete === true)
     .map((task) => <NoteItem key={task.id} note={task} />);
 
+  function onCheck() {
+    setShowComplete(!showComplete);
+  }
+
   return (
     <div className="taskContainer">
       <h1 className="center">Tasks</h1>
-      <label className="checkbox">
-        Show completed tasks.
-        <input
-          type="checkbox"
-          onChange={() => setShowComplete(!showComplete)}
-        />
+      <div className="checkDiv" onChange={onCheck}>
+        {showComplete ? (
+          <h4 className="close" onClick={onCheck}>
+            X
+          </h4>
+        ) : (
+          <h4 onClick={onCheck}>Show Complete</h4>
+        )}
+
         <br />
-      </label>
+      </div>
       <div className="allTasks">
         <div className="todoTasks">
           <div className="taskFlexContainer">

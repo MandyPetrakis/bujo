@@ -78,11 +78,11 @@
       "complete": false
     },
     {
-      "details": "Research Greek Mythology books ",
+      "details": "Greek Mythology books ",
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-13",
-      "additionalNotes": "Circe",
+      "additionalNotes": "Madeline Miller",
       "id": 14
     },
     {
@@ -130,11 +130,11 @@
       "complete": true
     },
     {
-      "details": "Then thousand flowers in the spring, the moon in autumn. A cool breeze in summer, snow in winter. If your mind isn't clouded be unnecessary things, this is the best season of your life. - Wu Min ",
+      "details": "Quotes",
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-14",
-      "additionalNotes": null,
+      "additionalNotes": "- Then thousand flowers in the spring, the moon in autumn. A cool breeze in summer, snow in winter. If your mind isn't clouded be unnecessary things, this is the best season of your life. - Wu Min\n\n- Stick to your knitting",
       "id": 21
     },
     {
@@ -147,14 +147,6 @@
       "urgent": true,
       "important": true,
       "complete": true
-    },
-    {
-      "details": "Stick to your knitting ",
-      "type": "idea",
-      "eventDate": null,
-      "dateCreated": "2023-2-14",
-      "additionalNotes": null,
-      "id": 23
     },
     {
       "details": "Buy ingredients for Todd",
@@ -274,17 +266,6 @@
       "id": 32
     },
     {
-      "details": "Cut nails",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-02-20",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": true,
-      "complete": false,
-      "id": 34
-    },
-    {
       "details": "Dye my hair ",
       "type": "task",
       "eventDate": null,
@@ -292,7 +273,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": false,
-      "complete": false,
+      "complete": true,
       "id": 35
     },
     {

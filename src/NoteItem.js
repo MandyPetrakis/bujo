@@ -118,19 +118,19 @@ function NoteItem({ note, onIdeaClick }) {
         onMouseLeave={() => setHover(false)}
         onClick={() => onIdeaClick(note)}
       >
-        <div className="itemChild">
-          <div>
+        <div>
+          <div className="idea">
             <BulbLiIcon /> {note.details}
+            {hover ? (
+              <div className="actions">
+                <button className="deleteButton" onClick={handleDelete}>
+                  <span role="img" aria-label="edit">
+                    <Delete />
+                  </span>
+                </button>
+              </div>
+            ) : null}
           </div>
-          {hover ? (
-            <div className="actions">
-              <button className="deleteButton" onClick={handleDelete}>
-                <span role="img" aria-label="edit">
-                  <Delete />
-                </span>
-              </button>
-            </div>
-          ) : null}
         </div>
       </div>
     );
