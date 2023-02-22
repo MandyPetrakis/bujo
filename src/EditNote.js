@@ -27,16 +27,16 @@ function EditNote({ body, noteId, resetEdit }) {
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className="editItem">
       <input
-        className="editBox"
+        className="noteEditBox"
         type="text"
         name="body"
         autoComplete="off"
         value={messageBody}
         onChange={(e) => setMessageBody(e.target.value)}
       />
-      <input type="submit" className="button1" value="Save" />
+      <input type="submit" className="editSave" value="Save" />
     </form>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useUpdateNotes, useNotes } from "./Context";
 import EditNote from "./EditNote";
-import { Pencil, Delete, BulbLiIcon } from "./Icons";
+import { Pencil, Delete, Sun } from "./Icons";
 
 function NoteItem({ note, onIdeaClick }) {
   const [completed, setCompleted] = useState(note.complete);
@@ -51,38 +51,43 @@ function NoteItem({ note, onIdeaClick }) {
         className="item"
       >
         <div
-          className="itemChild"
+          className="itemIcon"
           onClick={() => {
             setCompleted(!completed);
             onComplete();
           }}
         >
           {completed ? " X " : " ● "}
-          <div className="itemChild">
-            {editing ? (
-              <EditNote
-                body={note.details}
-                resetEdit={() => setEditing(false)}
-                noteId={note.id}
-                className="itemChild"
-              />
-            ) : (
-              <div>{note.details}</div>
-            )}
-          </div>
         </div>
+        {editing ? (
+          <EditNote
+            body={note.details}
+            resetEdit={() => setEditing(false)}
+            noteId={note.id}
+            className="noteEditBox"
+          />
+        ) : (
+          <div>{note.details}</div>
+        )}
         {hover ? (
-          <div className="actions">
-            <button className="editButton" onClick={() => setEditing(!editing)}>
-              <span role="img" aria-label="edit">
-                <Pencil />
-              </span>
-            </button>
-            <button className="deleteButton" onClick={handleDelete}>
-              <span role="img" aria-label="edit">
-                <Delete />
-              </span>
-            </button>
+          <div className="editIcons">
+            {editing ? null : (
+              <>
+                <button
+                  className="editButton"
+                  onClick={() => setEditing(!editing)}
+                >
+                  <span role="img" aria-label="edit">
+                    <Pencil />
+                  </span>
+                </button>
+                <button className="deleteButton" onClick={handleDelete}>
+                  <span role="img" aria-label="edit">
+                    <Delete />
+                  </span>
+                </button>
+              </>
+            )}
           </div>
         ) : null}
       </div>
@@ -94,19 +99,38 @@ function NoteItem({ note, onIdeaClick }) {
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        O {note.details} | {note.eventMonth}/{note.eventDay}
+        <div className="itemIcon">O</div>
+        {editing ? (
+          <EditNote
+            body={note.details}
+            resetEdit={() => setEditing(false)}
+            noteId={note.id}
+            className="noteEditBox"
+          />
+        ) : (
+          <div>
+            {note.details} | {note.eventMonth}/{note.eventDay}
+          </div>
+        )}
         {hover ? (
-          <div className="actions">
-            <button className="editButton">
-              <span role="img" aria-label="edit">
-                <Pencil />
-              </span>
-            </button>
-            <button className="deleteButton">
-              <span role="img" aria-label="edit">
-                <Delete />
-              </span>
-            </button>
+          <div className="editIcons">
+            {editing ? null : (
+              <>
+                <button
+                  className="editButton"
+                  onClick={() => setEditing(!editing)}
+                >
+                  <span role="img" aria-label="edit">
+                    <Pencil />
+                  </span>
+                </button>
+                <button className="deleteButton" onClick={handleDelete}>
+                  <span role="img" aria-label="edit">
+                    <Delete />
+                  </span>
+                </button>
+              </>
+            )}
           </div>
         ) : null}
       </div>
@@ -117,21 +141,42 @@ function NoteItem({ note, onIdeaClick }) {
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={() => onIdeaClick(note)}
+        className="item"
       >
-        <div>
-          <div className="idea">
-            <BulbLiIcon /> {note.details}
-            {hover ? (
-              <div className="actions">
+        <div className="itemIcon">
+          <Sun />
+        </div>
+        {editing ? (
+          <EditNote
+            body={note.details}
+            resetEdit={() => setEditing(false)}
+            noteId={note.id}
+            className="noteEditBox"
+          />
+        ) : (
+          <div>{note.details}</div>
+        )}
+        {hover ? (
+          <div className="editIcons">
+            {editing ? null : (
+              <>
+                <button
+                  className="editButton"
+                  onClick={() => setEditing(!editing)}
+                >
+                  <span role="img" aria-label="edit">
+                    <Pencil />
+                  </span>
+                </button>
                 <button className="deleteButton" onClick={handleDelete}>
                   <span role="img" aria-label="edit">
                     <Delete />
                   </span>
                 </button>
-              </div>
-            ) : null}
+              </>
+            )}
           </div>
-        </div>
+        ) : null}
       </div>
     );
   }

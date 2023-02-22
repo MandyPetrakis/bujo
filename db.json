@@ -273,7 +273,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": false,
-      "complete": true,
+      "complete": false,
       "id": 35
     },
     {
@@ -291,20 +291,6 @@
       "id": 36
     },
     {
-      "details": "a bunch of other things",
-      "type": "event",
-      "eventDate": "2023-02-14",
-      "eventDay": "14",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-02-20",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 37
-    },
-    {
       "details": "Call with Brittany | 11am",
       "type": "event",
       "eventDate": "2023-02-28",
@@ -317,6 +303,67 @@
       "important": false,
       "complete": false,
       "id": 38
+    },
+    {
+      "details": "Email water machine company",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-22",
+      "additionalNotes": null,
+      "urgent": true,
+      "important": false,
+      "complete": false,
+      "id": 39
+    },
+    {
+      "details": "Give Fred a bath",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-22",
+      "additionalNotes": null,
+      "urgent": true,
+      "important": true,
+      "complete": false,
+      "id": 40
+    },
+    {
+      "details": "Film app walkthrough",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-22",
+      "additionalNotes": null,
+      "urgent": true,
+      "important": true,
+      "complete": false,
+      "id": 41
+    },
+    {
+      "details": "Call with Julie | 3p",
+      "type": "event",
+      "eventDate": "2023-03-03",
+      "eventDay": "03",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-22",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 42
+    },
+    {
+      "details": "App Ideas",
+      "type": "idea",
+      "eventDate": "2023-03-03",
+      "eventDay": "03",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-22",
+      "additionalNotes": null,
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 43
     }
   ],
   "goals": [
@@ -343,14 +390,6 @@
       "details": "3x/week Workout",
       "category": "fitness",
       "id": 3
-    },
-    {
-      "year": 2023,
-      "month": 2,
-      "dateCreated": "2023-02-20",
-      "details": "Try harder",
-      "category": "career",
-      "id": 4
     }
   ]
 }

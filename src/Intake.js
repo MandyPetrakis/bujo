@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Slash } from "./Icons";
 import { useCurrentDate, useUpdateNotes, useNotes } from "./Context";
 
 function Intake() {
@@ -13,6 +14,10 @@ function Intake() {
   const [notes, setNotes] = useNotes();
   const [urgent, setUrgent] = useState(false);
   const [important, setImportant] = useState(false);
+
+  function onClick() {
+    setUrgent(!urgent);
+  }
 
   function handleDateChange(e) {
     setEventDate(e.target.value);
@@ -59,31 +64,33 @@ function Intake() {
 
   return (
     <div className="cardContainer">
+      <h1 className="center"> Make a Note...</h1>
       <form onSubmit={onSubmit}>
         <div className="cardItem">
           <select
             value={type}
-            className="cardItem1"
+            className="noteType"
             name="type"
             onChange={(e) => setType(e.target.value)}
           >
-            <option value="task"> ● </option>
-            <option value="event">O</option>
-            <option value="idea">!</option>
+            <option value="task"> TASK </option>
+            <option value="event">EVENT</option>
+            <option value="idea">IDEA</option>
           </select>
           <input
-            className="cardItem2"
+            className="noteInput"
             type="text"
             name="note"
             value={note}
             placeholder="What do you want to remember?"
             onChange={(e) => setNote(e.target.value)}
           />
-
+        </div>
+        <div className="extraDetails">
           {type === "event" ? (
             <>
               <input
-                className="cardItem3"
+                className="dateEnter"
                 name="date"
                 type="date"
                 onChange={handleDateChange}
@@ -93,39 +100,30 @@ function Intake() {
           ) : null}
           {type === "task" ? (
             <>
-              <div className="checkBoxContainer">
-                <div className="taskUI">
-                  <label>
-                    Urgent:
-                    <input
-                      className="cardItem4"
-                      type="checkBox"
-                      onChange={() => setUrgent(!urgent)}
-                      checked={urgent}
-                      ref={dateInputRef}
-                    />
-                  </label>
+              {urgent ? (
+                <div onClick={onClick} className="UIactive">
+                  Urgent
                 </div>
-                <div className="taskUI">
-                  <label>
-                    Important:
-                    <div className="cardItem4">
-                      <input
-                        className="cardItem4"
-                        type="checkBox"
-                        checked={important}
-                        onChange={() => setImportant(!important)}
-                        ref={dateInputRef}
-                      />
-                    </div>
-                  </label>
+              ) : (
+                <div onClick={onClick} className="inactive">
+                  Not Urgent
                 </div>
-              </div>
+              )}
+              <Slash className={"intakeSlash"} />
+              {important ? (
+                <div onClick={() => setImportant(false)} className="UIactive">
+                  Important
+                </div>
+              ) : (
+                <div onClick={() => setImportant(true)} className="inactive">
+                  Not Important
+                </div>
+              )}
             </>
           ) : null}
         </div>
         <div className="cardItem">
-          <input className="button" type="submit" value="Add Note" />
+          <input className="noteButton" type="submit" value="Add Note" />
         </div>
       </form>
     </div>
