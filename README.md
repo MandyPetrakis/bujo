@@ -11,9 +11,8 @@ The rapid log is where you enter all your thoughts and events that come up durin
 Future updates will include:
 
 - the ability to add due dates to tasks
-- the daily view will show todays tasks, events, as well as un dated tasks
 - the option to generate a random idea note that you may have forgotten about to sparl creativity
-- adding the day of the week to the monthly view page
+
 
 ## Acknowedgement
 
