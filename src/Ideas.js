@@ -6,16 +6,15 @@ import Editor from "./Editor";
 
 function Ideas() {
   const [notes, setNotes] = useNotes();
-  const [showDetails, setShowDetails] = useState(false);
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState("");
   const [title, setTitle] = useState();
   const [editing, setEditing] = useState(false);
   const [editingNote, setEditingNote] = useState();
 
   function onShowDetails(note) {
+    setDetails("");
     setDetails(note.additionalNotes);
     setTitle(note.details);
-    setShowDetails(true);
     setEditingNote(note);
   }
 
@@ -52,44 +51,28 @@ function Ideas() {
       <h1 className="center">Thoughts</h1>
       <div className="allIdeas">
         <div className="ideaContainer">{renderList}</div>
-        {showDetails ? (
-          <div className="ideaDetails">
-            {editing ? (
-              <div className="ideaEdit">
-                <input
-                  className="titleEdit"
-                  value={title}
-                  type="text"
-                  onChange={(e) => setTitle(e.target.value)}
-                />
+        <div className="ideaDetails">
+          <div className="ideaEdit">
+            <input
+              className="titleEdit"
+              value={title}
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+            />
 
-                <textarea
-                  className="detailEdit"
-                  value={details}
-                  rows="10"
-                  onChange={(e) => setDetails(e.target.value)}
-                />
-                <button className="saveButton" onClick={onSave}>
-                  <span role="img" aria-label="edit">
-                    <Save />
-                  </span>
-                </button>
-              </div>
-            ) : (
-              <div>
-                <h3>{title}</h3> <div>{details}</div>
-                <button
-                  className="saveButton"
-                  onClick={() => setEditing(!editing)}
-                >
-                  <span role="img" aria-label="edit">
-                    <Pencil />
-                  </span>
-                </button>
-              </div>
-            )}
+            <textarea
+              className="detailEdit"
+              value={details}
+              rows="10"
+              onChange={(e) => setDetails(e.target.value)}
+            />
+            <button className="saveButton" onClick={onSave}>
+              <span role="img" aria-label="edit">
+                <Save />
+              </span>
+            </button>
           </div>
-        ) : null}
+        </div>
       </div>
     </div>
   );

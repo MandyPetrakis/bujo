@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Delete, Pencil } from "./Icons";
 import { useNotes } from "./Context";
+import EditNote from "./EditNote";
 
 export default function CalendarEvent({ event }) {
   const [hover, setHover] = useState(false);
   const [notes, setNotes] = useNotes();
+  const [editing, setEditing] = useState(false);
 
   function handleDelete() {
     fetch(`http://localhost:3000/notes/${event.id}`, {
@@ -28,19 +30,35 @@ export default function CalendarEvent({ event }) {
       key={event.id}
       className="dayEvent"
     >
-      {event.details}.
+      {editing ? (
+        <EditNote
+          body={event.details}
+          resetEdit={() => setEditing(false)}
+          noteId={event.id}
+          className="noteEditBox"
+        />
+      ) : (
+        <div>{event.details}</div>
+      )}
       {hover ? (
-        <div className="actions">
-          <button className="editButton">
-            <span role="img" aria-label="edit">
-              <Pencil />
-            </span>
-          </button>
-          <button className="deleteButton" onClick={handleDelete}>
-            <span role="img" aria-label="edit">
-              <Delete />
-            </span>
-          </button>
+        <div className="editIcons">
+          {editing ? null : (
+            <>
+              <button
+                className="editButton"
+                onClick={() => setEditing(!editing)}
+              >
+                <span role="img" aria-label="edit">
+                  <Pencil />
+                </span>
+              </button>
+              <button className="deleteButton" onClick={handleDelete}>
+                <span role="img" aria-label="edit">
+                  <Delete />
+                </span>
+              </button>
+            </>
+          )}
         </div>
       ) : null}
     </div>

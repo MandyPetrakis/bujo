@@ -9,11 +9,28 @@ body {
 
   .navBarContainer {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    padding: 20px
+    flex-wrap: nowrap;
+    padding: 20px;
+    justify-content: space-between;
       }
+  
+  .logo{
+    align-self: flex-start;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 100px;
+    margin-left: 20px;
+    font-weight: bold;
+    text-decoration: overline;
+    color: #c7b28e;
+    flex-grow: 1;
+  }
+
+  .links{
+    display: flex;
+    flex-grow: 4;
+    justify-content: flex-end;
+
+  }
 
   .navBarItem{
     display: flex;
@@ -146,11 +163,59 @@ body {
 
 /* Monthly View */
 
+.calendarItemContainer{
+  display: flex;
+  align-items: stretch;
+  padding: 10px
+
+}
+
+  .calendarItem{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex-grow: 2;
+    width: 35%
+  }
+  .monthSelect{
+    background-color: #f2f2f2;
+    border-style: none;
+    font-size: 30px;
+    padding: 3px;
+    align-self: center;
+    font-weight: bold;
+  }
+  .focus{
+    align-self: center;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+.goalItem{
+  font-size: 18px;
+  margin: 3px
+}
+
   .goalSetContainer{
+    margin-top:90px;;
     display: flex;
     flex-wrap: nowrap;
-    margin-top: 100px
+    align-self: flex-end;
 }
+
+.editBox{
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  border-bottom: 1px solid #b7b7b7b2;
+  margin-left:3px;
+  height: 30px;
+  width: 200px;
+  flex-shrink: 2;
+}
+
   .categorySelect{
     background: #F2F2F2F2;
     border-radius: 12px;
@@ -168,50 +233,32 @@ body {
     padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-size: 15px;
+    font-size: 18px;
     color: #f2f2f2;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
   }
 
-  .calendarItem{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 20px;
-    align-items: start;
-    flex-grow: 2;
-    align-items: stretch;
-    width: 300px
-  }
-
-  .monthSelect{
-    background-color: #f2f2f2;
-    border-style: none;
-    font-size: 30px;
-    padding: 3px;
-    margin: auto;
-    font-weight: bold;
-  }
-
-.focus{
-  height: 300px;
-  display: flex;
-  flex-direction: column;
+  /* Monthly Tasks */
+.monthlyTask{
+  margin-top: 100px;
 }
 
-  .calendarFlexList{
+
+/* Calendar */
+
+.calendarFlexList{
     display: flex;
     flex-direction: column;
     margin: 20px;
     flex-grow: 1;
-
+    width:50%
   }
   
   .day{
     font-weight: bold;
+    font-size: 18px;
     margin: 5px;
     display: flex;
     flex-wrap: nowrap;
@@ -227,7 +274,6 @@ body {
     flex-wrap: nowrap;
     flex: none;
     display: flex;
-
     justify-content:flex-end;
   }
   .dayNumber{
@@ -236,12 +282,14 @@ body {
 
   }
   .dayLine{
-width: 10px;
-text-align: center;
+    width: 10px;
+    text-align: center;
+    margin: 2px
   }
   .dayDay{
     width: 15px;
     text-align:center;
+    margin-right: 3px
   }
 
   .eventItem{
@@ -251,17 +299,14 @@ text-align: center;
   .dayEvent{
     font-weight: 100;
     margin-left: 5px;
-  }
-  .calendarItemContainer{
     display: flex;
-    align-items: start;
-
+    font-size: 18px;
   }
-
+ 
 /* Note Item  */
 
   .item {
-   margin: 10px;
+   margin: 5px;
    font-size: 18px;
    width: 100%;
    height: 30px;
@@ -323,14 +368,7 @@ text-align: center;
   border: none;
 }
 
-.editBox{
-  border-style: solid;
-  padding: 10px;
-  border-radius: 12px;
-  border-bottom: 2px solid #b7b7b7e9;
-  background-color: #f2f2f2;
-  margin: 3px;
-}
+
 
 
 /* Ideas  */
@@ -437,6 +475,7 @@ margin: 0 10px 0px 0px;
     border-width: 2px;
     display: flex;
     flex-direction: column;
+    padding-top: 20px
   }
 
   .taskFlexContainer{
@@ -474,10 +513,13 @@ text-align: center;
 color: darkgray;
 margin-top: 0;
 }
+.close {
+  margin: 0px
+}
   .completed {
     border: solid;
     flex-grow: 1;
-    width: 35%;
+    width: 30%;
     border-style: outset;
     border-color: #b7b7b7b2;
     background-color: #f2f2f2;
@@ -485,7 +527,8 @@ margin-top: 0;
     border-radius: 15px;
     margin-left: 5px;
     margin-right: 20px;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    padding: 10px 20px;
   }
 
   .taskItem{

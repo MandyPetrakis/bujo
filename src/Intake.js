@@ -41,7 +41,7 @@ function Intake() {
       eventMonth: eventMonth,
       eventYear: eventYear,
       dateCreated: today,
-      additionalNotes: null,
+      additionalNotes: "-",
       urgent: urgent,
       important: important,
       complete: false,

@@ -4,7 +4,6 @@ import {
   useCurrentMonth,
   useCurrentYear,
   useGoalsList,
-  useUpdateGoalsList,
 } from "./Context";
 import MonthlyTasks from "./MonthlyTasks";
 import Calendar from "./Calendar";
@@ -49,10 +48,15 @@ function MonthView() {
 
   const renderGoals = goalsList
     .filter((goal) => goal.month === displayMonth)
-    .map((goal) => <li key={goal.id}>{goal.details}</li>);
+    .map((goal) => (
+      <div className="item" key={goal.id}>
+        {goal.details}
+      </div>
+    ));
 
   return (
     <div className="cardContainer">
+      <h1 className="center">Monthly Overview</h1>
       <div className="calendarItemContainer">
         <div className="calendarItem">
           <select

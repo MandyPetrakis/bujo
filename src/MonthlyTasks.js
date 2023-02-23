@@ -29,17 +29,9 @@ function MonthlyTasks({ displayMonth }) {
     .sort((a, b) => (a.urgent > b.urgent ? 1 : -1));
 
   return (
-    <div className="task">
+    <div className="monthlyTask">
       <h2 className="center">Tasks</h2>
-      <label>
-        Show Complete?
-        <input
-          type="checkbox"
-          checked={showComplete}
-          onChange={toggleShowComplete}
-        />
-      </label>
-      {showComplete ? taskList : filteredList}
+      <div className=""> {filteredList}</div>
     </div>
   );
 }

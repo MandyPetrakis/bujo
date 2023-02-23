@@ -45,18 +45,7 @@
       "id": 10
     },
     {
-      "details": "Super Bowl",
-      "type": "event",
-      "eventDate": "2023-02-12",
-      "eventDay": "12",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 11
-    },
-    {
-      "details": "Career video",
+      "details": "Career video ",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-2-13",
@@ -78,34 +67,12 @@
       "complete": false
     },
     {
-      "details": "Greek Mythology books ",
+      "details": "Books ",
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-13",
-      "additionalNotes": "Madeline Miller",
+      "additionalNotes": "- Madeline Miller\n- Say the Right Thing ",
       "id": 14
-    },
-    {
-      "details": "Megan's Birthday",
-      "type": "event",
-      "eventDate": "2023-08-19",
-      "eventDay": "19",
-      "eventMonth": "08",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 15
-    },
-    {
-      "details": "Pick Emiliano up from the airport (12pm)",
-      "type": "event",
-      "eventDate": "2023-02-14",
-      "eventDay": "14",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 16
     },
     {
       "details": "Phase 2 Blog: context?",
@@ -116,17 +83,6 @@
       "id": 18,
       "urgent": true,
       "important": true,
-      "complete": true
-    },
-    {
-      "details": "Blog: callback functions.",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-15",
-      "additionalNotes": null,
-      "id": 19,
-      "urgent": false,
-      "important": false,
       "complete": true
     },
     {
@@ -158,20 +114,6 @@
       "important": true,
       "complete": true,
       "id": 24
-    },
-    {
-      "details": "Valentines Day",
-      "type": "event",
-      "eventDate": "2023-02-14",
-      "eventDay": "14",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-02-16",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 25
     },
     {
       "details": "Hang with Jackie + Zan",
@@ -220,7 +162,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-18",
-      "additionalNotes": null,
+      "additionalNotes": ".",
       "urgent": false,
       "important": false,
       "complete": false,
@@ -273,7 +215,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": false,
-      "complete": false,
+      "complete": true,
       "id": 35
     },
     {
@@ -305,7 +247,7 @@
       "id": 38
     },
     {
-      "details": "Email water machine company",
+      "details": "Email water company",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-02-22",
@@ -327,43 +269,73 @@
       "id": 40
     },
     {
-      "details": "Film app walkthrough",
+      "details": "Record app walkthrough",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-02-22",
       "additionalNotes": null,
       "urgent": true,
       "important": true,
-      "complete": false,
+      "complete": true,
       "id": 41
     },
     {
-      "details": "Call with Julie | 3p",
-      "type": "event",
-      "eventDate": "2023-03-03",
-      "eventDay": "03",
-      "eventMonth": "03",
-      "eventYear": "2023",
-      "dateCreated": "2023-02-22",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 42
-    },
-    {
-      "details": "App Ideas",
+      "details": "App ideas",
       "type": "idea",
-      "eventDate": "2023-03-03",
-      "eventDay": "03",
-      "eventMonth": "03",
-      "eventYear": "2023",
+      "eventDate": null,
       "dateCreated": "2023-02-22",
-      "additionalNotes": null,
+      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important",
       "urgent": false,
       "important": false,
       "complete": false,
       "id": 43
+    },
+    {
+      "details": "Send congratulations card to Carolyn + John",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": true,
+      "complete": false,
+      "id": 44
+    },
+    {
+      "details": "Order Fred's food",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": true,
+      "important": true,
+      "complete": false,
+      "id": 45
+    },
+    {
+      "details": "Modern app design",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 46
+    },
+    {
+      "details": "Joshs Birthday",
+      "type": "event",
+      "eventDate": "2023-06-15",
+      "eventDay": "15",
+      "eventMonth": "06",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 47
     }
   ],
   "goals": [
@@ -387,7 +359,7 @@
       "year": 2023,
       "month": 2,
       "dateCreated": "2023-02-18",
-      "details": "3x/week Workout",
+      "details": "Workout 3x/week",
       "category": "fitness",
       "id": 3
     }

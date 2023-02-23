@@ -20,14 +20,7 @@ function Tasks() {
     <div className="taskContainer">
       <h1 className="center">Tasks</h1>
       <div className="checkDiv" onChange={onCheck}>
-        {showComplete ? (
-          <h4 className="close" onClick={onCheck}>
-            X
-          </h4>
-        ) : (
-          <h4 onClick={onCheck}>Show Complete</h4>
-        )}
-
+        {showComplete ? null : <div onClick={onCheck}>Show Complete</div>}
         <br />
       </div>
       <div className="allTasks">
@@ -104,6 +97,9 @@ function Tasks() {
         </div>
         {showComplete ? (
           <div className="completed">
+            <div className="close" onClick={onCheck}>
+              <Close />
+            </div>
             <h2 className="center">Complete</h2>
             <h4 className="subtext">You did it!</h4>
             {completedTasks}
