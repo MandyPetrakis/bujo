@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Slash } from "./Icons";
-import { useCurrentDate, useUpdateNotes, useNotes } from "./Context";
+import { useCurrentDate, useNotes } from "./Context";
 
 function Intake() {
   const [note, setNote] = useState("");
@@ -14,10 +14,6 @@ function Intake() {
   const [notes, setNotes] = useNotes();
   const [urgent, setUrgent] = useState(false);
   const [important, setImportant] = useState(false);
-
-  function onClick() {
-    setUrgent(!urgent);
-  }
 
   function handleDateChange(e) {
     setEventDate(e.target.value);
@@ -60,6 +56,10 @@ function Intake() {
     setType("task");
     setUrgent(false);
     setImportant(false);
+    setEventDate("");
+    setEventDay("");
+    setEventMonth("");
+    setEventYear("");
   }
 
   return (
@@ -101,11 +101,11 @@ function Intake() {
           {type === "task" ? (
             <>
               {urgent ? (
-                <div onClick={onClick} className="UIactive">
+                <div onClick={() => setUrgent(false)} className="UIactive">
                   Urgent
                 </div>
               ) : (
-                <div onClick={onClick} className="inactive">
+                <div onClick={() => setUrgent(true)} className="inactive">
                   Not Urgent
                 </div>
               )}
@@ -123,7 +123,7 @@ function Intake() {
           ) : null}
         </div>
         <div className="cardItem">
-          <input className="noteButton" type="submit" value="Add Note" />
+          <input className="noteButton" type="submit" value="Add" />
         </div>
       </form>
     </div>

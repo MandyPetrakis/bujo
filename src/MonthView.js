@@ -22,6 +22,10 @@ function MonthView() {
   }
   function goalSubmit(e) {
     e.preventDefault();
+    if (goal === "") {
+      return;
+    }
+
     const newGoal = {
       year: year,
       month: displayMonth,

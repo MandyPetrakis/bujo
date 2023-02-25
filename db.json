@@ -284,7 +284,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-22",
-      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important",
+      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make U/I buttons more intuitive\n- Add icon to note intake\n- Make icons smaller \n- Take add note button away\n- Fixed size div for note intake\n- Make goal fixed height and overflow scroll\n- Set cursor\n- Fix reload issue ",
       "urgent": false,
       "important": false,
       "complete": false,
@@ -309,7 +309,7 @@
       "additionalNotes": "-",
       "urgent": true,
       "important": true,
-      "complete": false,
+      "complete": true,
       "id": 45
     },
     {
@@ -324,18 +324,57 @@
       "id": 46
     },
     {
-      "details": "Joshs Birthday",
+      "details": "Job Search Notes",
+      "type": "idea",
+      "eventDate": null,
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "- Learn, Share, Engage daily",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 47
+    },
+    {
+      "details": "Mejuri Meeting | 2pm",
       "type": "event",
-      "eventDate": "2023-06-15",
-      "eventDay": "15",
-      "eventMonth": "06",
+      "eventDate": "2023-02-28",
+      "eventDay": "28",
+      "eventMonth": "02",
       "eventYear": "2023",
       "dateCreated": "2023-02-23",
       "additionalNotes": "-",
       "urgent": false,
       "important": false,
       "complete": false,
-      "id": 47
+      "id": 48
+    },
+    {
+      "details": "Phase 2 Assessment | 12p",
+      "type": "event",
+      "eventDate": "2023-03-03",
+      "eventDay": "03",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 49
+    },
+    {
+      "details": "Astian hang | 4:30pm",
+      "type": "event",
+      "eventDate": "2023-02-28",
+      "eventDay": "28",
+      "eventMonth": "02",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-23",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 50
     }
   ],
   "goals": [
@@ -354,14 +393,6 @@
       "details": "Consistent bed time",
       "category": "rest",
       "id": 2
-    },
-    {
-      "year": 2023,
-      "month": 2,
-      "dateCreated": "2023-02-18",
-      "details": "Workout 3x/week",
-      "category": "fitness",
-      "id": 3
     }
   ]
 }
