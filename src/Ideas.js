@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNotes } from "./Context";
 import NoteItem from "./NoteItem";
 import { Pencil, Save } from "./Icons";
-import Editor from "./Editor";
 
 function Ideas() {
   const [notes, setNotes] = useNotes();

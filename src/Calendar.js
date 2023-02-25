@@ -45,7 +45,7 @@ function Calendar({ displayMonth }) {
             ) : null}
             <div className="dayNumber">{day.day}</div>
             <div className="dayLine"> | </div>
-            <div className="dayDay">{day.dayOfWeek._name.charAt(0)}</div>:
+            <div className="dayDay">{day.dayOfWeek._name.charAt(0)}</div>
           </div>
           <div className="eventItem">
             {dailyEvents.map((event) => (

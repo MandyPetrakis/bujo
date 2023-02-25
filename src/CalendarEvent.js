@@ -4,7 +4,6 @@ import { useNotes } from "./Context";
 import EditNote from "./EditNote";
 
 export default function CalendarEvent({ event }) {
-  const [hover, setHover] = useState(false);
   const [notes, setNotes] = useNotes();
   const [editing, setEditing] = useState(false);
 
@@ -24,43 +23,24 @@ export default function CalendarEvent({ event }) {
   }
 
   return (
-    <div
-      onMouseOver={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      key={event.id}
-      className="dayEvent"
-    >
+    <div onClick={() => setEditing(true)} key={event.id} className="dayEvent">
       {editing ? (
-        <EditNote
-          body={event.details}
-          resetEdit={() => setEditing(false)}
-          noteId={event.id}
-          className="noteEditBox"
-        />
+        <>
+          <EditNote
+            body={event.details}
+            resetEdit={() => setEditing(false)}
+            noteId={event.id}
+            className="noteEditBox"
+          />
+          <button className="deleteButton" onClick={handleDelete}>
+            <span role="img" aria-label="edit">
+              <Delete />
+            </span>
+          </button>
+        </>
       ) : (
-        <div>{event.details}</div>
+        <div>O {event.details}</div>
       )}
-      {hover ? (
-        <div className="editIcons">
-          {editing ? null : (
-            <>
-              <button
-                className="editButton"
-                onClick={() => setEditing(!editing)}
-              >
-                <span role="img" aria-label="edit">
-                  <Pencil />
-                </span>
-              </button>
-              <button className="deleteButton" onClick={handleDelete}>
-                <span role="img" aria-label="edit">
-                  <Delete />
-                </span>
-              </button>
-            </>
-          )}
-        </div>
-      ) : null}
     </div>
   );
 }

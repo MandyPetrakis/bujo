@@ -7,56 +7,17 @@ import {
 } from "./Context";
 import MonthlyTasks from "./MonthlyTasks";
 import Calendar from "./Calendar";
+import Goals from "./Goals";
 
 function MonthView() {
   const today = useCurrentDate();
   const currentMonth = useCurrentMonth() || 12;
   const year = useCurrentYear() || 2023;
   const [displayMonth, setDisplayMonth] = useState(currentMonth);
-  const [goalsList, setGoalsList] = useGoalsList();
-  const [goal, setGoal] = useState("");
-  const [category, setCategory] = useState("");
 
   function handleChange(e) {
     setDisplayMonth(parseInt(e.target.value));
   }
-  function goalSubmit(e) {
-    e.preventDefault();
-    if (goal === "") {
-      return;
-    }
-
-    const newGoal = {
-      year: year,
-      month: displayMonth,
-      dateCreated: today,
-      details: goal,
-      category: category,
-    };
-
-    fetch("http://localhost:3000/goals", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newGoal),
-    })
-      .then((r) => r.json())
-      .then((data) => {
-        const updatedGoals = [...goalsList, data];
-        setGoalsList(updatedGoals);
-      });
-    setGoal("");
-    setCategory("");
-  }
-
-  const renderGoals = goalsList
-    .filter((goal) => goal.month === displayMonth)
-    .map((goal) => (
-      <div className="item" key={goal.id}>
-        {goal.details}
-      </div>
-    ));
 
   return (
     <div className="cardContainer">
@@ -81,34 +42,7 @@ function MonthView() {
             <option value="11">November</option>
             <option value="12">December</option>
           </select>
-          <div className="focus">
-            <h2 className="center">Goals</h2>
-            {renderGoals}
-            <div className="goalSetContainer">
-              <form onSubmit={goalSubmit}>
-                <input
-                  type="text"
-                  className="editBox"
-                  value={goal}
-                  onChange={(e) => setGoal(e.target.value)}
-                />
-                <select
-                  value={category}
-                  className="categorySelect"
-                  onChange={(e) => setCategory(e.target.value)}
-                >
-                  <option disabled selected value="">
-                    Category
-                  </option>
-                  <option value="career">Career</option>
-                  <option value="fitness">Fitness</option>
-                  <option value="relationships">Relationships</option>
-                  <option value="rest">Rest</option>
-                </select>
-                <input type="submit" value="Set it!" className="goalSubmit" />
-              </form>
-            </div>
-          </div>
+          <Goals />
           <MonthlyTasks displayMonth={displayMonth} />
         </div>
         <Calendar displayMonth={displayMonth} />

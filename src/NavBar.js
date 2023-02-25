@@ -4,7 +4,7 @@ import { CalendarIcon, ListIcon, BulbIcon, LogIcon } from "./Icons";
 
 const linkStyles = {
   display: "flex",
-  margin: "100px",
+  margin: "10px",
   borderStyle: "none",
 };
 

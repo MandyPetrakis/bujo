@@ -36,7 +36,6 @@ function EditNote({ body, noteId, resetEdit }) {
         value={messageBody}
         onChange={(e) => setMessageBody(e.target.value)}
       />
-      <input type="submit" className="editSave" value="Save" />
     </form>
   );
 }

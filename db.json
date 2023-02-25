@@ -284,7 +284,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-22",
-      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make U/I buttons more intuitive\n- Add icon to note intake\n- Make icons smaller \n- Take add note button away\n- Fixed size div for note intake\n- Make goal fixed height and overflow scroll\n- Set cursor\n- Fix reload issue ",
+      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make goal fixed height and overflow scroll\n- Set cursor\n- Fix reload issue \n- Add Save indication on ideas",
       "urgent": false,
       "important": false,
       "complete": false,
@@ -375,6 +375,17 @@
       "important": false,
       "complete": false,
       "id": 50
+    },
+    {
+      "details": "Send Julie's package",
+      "type": "task",
+      "eventDate": null,
+      "dateCreated": "2023-02-25",
+      "additionalNotes": "-",
+      "urgent": true,
+      "important": true,
+      "complete": false,
+      "id": 51
     }
   ],
   "goals": [
@@ -393,6 +404,22 @@
       "details": "Consistent bed time",
       "category": "rest",
       "id": 2
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-25",
+      "details": "Workout 3x/ week",
+      "category": "",
+      "id": 3
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-25",
+      "details": "Workout 3x/week",
+      "category": "fitness",
+      "id": 4
     }
   ]
 }

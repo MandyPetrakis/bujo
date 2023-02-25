@@ -49,9 +49,12 @@ function NoteItem({ note, onIdeaClick }) {
         onMouseOver={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         className="item"
+        onClick={() => {
+          setEditing(true);
+        }}
       >
         <div
-          className="itemIcon"
+          className="taskItemIcon"
           onClick={() => {
             setCompleted(!completed);
             onComplete();
@@ -60,36 +63,22 @@ function NoteItem({ note, onIdeaClick }) {
           {completed ? " X " : " ● "}
         </div>
         {editing ? (
-          <EditNote
-            body={note.details}
-            resetEdit={() => setEditing(false)}
-            noteId={note.id}
-            className="noteEditBox"
-          />
+          <>
+            <EditNote
+              body={note.details}
+              resetEdit={() => setEditing(false)}
+              noteId={note.id}
+              className="noteEditBox"
+            />
+            <button className="deleteButton" onClick={handleDelete}>
+              <span role="img" aria-label="edit">
+                <Delete />
+              </span>
+            </button>
+          </>
         ) : (
-          <div>{note.details}</div>
+          <div className="cursor">{note.details}</div>
         )}
-        {hover ? (
-          <div className="editIcons">
-            {editing ? null : (
-              <>
-                <button
-                  className="editButton"
-                  onClick={() => setEditing(!editing)}
-                >
-                  <span role="img" aria-label="edit">
-                    <Pencil />
-                  </span>
-                </button>
-                <button className="deleteButton" onClick={handleDelete}>
-                  <span role="img" aria-label="edit">
-                    <Delete />
-                  </span>
-                </button>
-              </>
-            )}
-          </div>
-        ) : null}
       </div>
     );
   } else if (note.type === "event") {
@@ -105,7 +94,6 @@ function NoteItem({ note, onIdeaClick }) {
             body={note.details}
             resetEdit={() => setEditing(false)}
             noteId={note.id}
-            className="noteEditBox"
           />
         ) : (
           <div>

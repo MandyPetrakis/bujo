@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
-import { Slash } from "./Icons";
+import { Sun } from "./Icons";
 import { useCurrentDate, useNotes } from "./Context";
+import ToggleSwitch from "./ToggleSwitch";
 
 function Intake() {
   const [note, setNote] = useState("");
@@ -28,6 +29,9 @@ function Intake() {
 
   function onSubmit(e) {
     e.preventDefault();
+    if (note === "") {
+      return;
+    }
 
     const newNote = {
       details: note,
@@ -77,6 +81,11 @@ function Intake() {
             <option value="event">EVENT</option>
             <option value="idea">IDEA</option>
           </select>
+          <div className="noteIcon">
+            {type === "task" ? "●" : null}
+            {type === "event" ? "O" : null}
+            {type === "idea" ? <Sun /> : null}
+          </div>
           <input
             className="noteInput"
             type="text"
@@ -100,31 +109,23 @@ function Intake() {
           ) : null}
           {type === "task" ? (
             <>
-              {urgent ? (
-                <div onClick={() => setUrgent(false)} className="UIactive">
-                  Urgent
-                </div>
-              ) : (
-                <div onClick={() => setUrgent(true)} className="inactive">
-                  Not Urgent
-                </div>
-              )}
-              <Slash className={"intakeSlash"} />
-              {important ? (
-                <div onClick={() => setImportant(false)} className="UIactive">
-                  Important
-                </div>
-              ) : (
-                <div onClick={() => setImportant(true)} className="inactive">
-                  Not Important
-                </div>
-              )}
+              <ToggleSwitch
+                isOn={urgent}
+                handleToggle={() => setUrgent(!urgent)}
+                name="Urgent"
+              />
+              <div className="intakeSlash">/</div>
+              <ToggleSwitch
+                name="Important"
+                isOn={important}
+                handleToggle={() => setImportant(!important)}
+              />
             </>
           ) : null}
         </div>
-        <div className="cardItem">
+        {/* <div className="cardItem">
           <input className="noteButton" type="submit" value="Add" />
-        </div>
+        </div> */}
       </form>
     </div>
   );
