@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import {
-  useCurrentDate,
-  useCurrentMonth,
-  useCurrentYear,
-  useGoalsList,
-} from "./Context";
+import { useCurrentDate, useCurrentMonth, useCurrentYear } from "./Context";
 import MonthlyTasks from "./MonthlyTasks";
 import Calendar from "./Calendar";
 import Goals from "./Goals";
 
 function MonthView() {
-  const today = useCurrentDate();
-  const currentMonth = useCurrentMonth() || 12;
-  const year = useCurrentYear() || 2023;
+  const currentMonth = useCurrentMonth();
   const [displayMonth, setDisplayMonth] = useState(currentMonth);
 
   function handleChange(e) {
@@ -26,7 +19,7 @@ function MonthView() {
         <div className="calendarItem">
           <select
             className="monthSelect"
-            value={displayMonth}
+            defaultValue={displayMonth}
             onChange={handleChange}
           >
             <option value="1">January</option>
@@ -42,7 +35,7 @@ function MonthView() {
             <option value="11">November</option>
             <option value="12">December</option>
           </select>
-          <Goals />
+          <Goals displayMonth={displayMonth} />
           <MonthlyTasks displayMonth={displayMonth} />
         </div>
         <Calendar displayMonth={displayMonth} />

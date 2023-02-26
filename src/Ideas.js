@@ -7,8 +7,8 @@ function Ideas() {
   const [notes, setNotes] = useNotes();
   const [details, setDetails] = useState("");
   const [title, setTitle] = useState();
-  const [editing, setEditing] = useState(false);
   const [editingNote, setEditingNote] = useState();
+  const [needsSave, setNeedsSave] = useState(false);
 
   function onShowDetails(note) {
     setDetails("");
@@ -37,17 +37,19 @@ function Ideas() {
           } else return note;
         });
         setNotes(updatedNotes);
-        setEditing(false);
+        setNeedsSave(false);
       });
   }
 
-  const ideaList = notes.filter((note) => note.type == "idea");
-  const renderList = ideaList.map((idea) => (
-    <NoteItem key={idea.id} note={idea} onIdeaClick={onShowDetails} />
-  ));
+  const renderList = notes
+    .filter((note) => note.type == "idea")
+    .map((idea) => (
+      <NoteItem key={idea.id} note={idea} onIdeaClick={onShowDetails} />
+    ));
+
   return (
     <div className="cardContainer">
-      <h1 className="center">Thoughts</h1>
+      <h1 className="center">Ideas</h1>
       <div className="allIdeas">
         <div className="ideaContainer">{renderList}</div>
         <div className="ideaDetails">
@@ -56,20 +58,25 @@ function Ideas() {
               className="titleEdit"
               value={title}
               type="text"
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => {
+                setTitle(e.target.value);
+                setNeedsSave(true);
+              }}
             />
-
             <textarea
               className="detailEdit"
               value={details}
               rows="10"
-              onChange={(e) => setDetails(e.target.value)}
+              onChange={(e) => {
+                setDetails(e.target.value);
+                setNeedsSave(true);
+              }}
             />
-            <button className="saveButton" onClick={onSave}>
-              <span role="img" aria-label="edit">
-                <Save />
-              </span>
-            </button>
+            {needsSave ? (
+              <button className="saveButton" onClick={onSave}>
+                Save
+              </button>
+            ) : null}
           </div>
         </div>
       </div>

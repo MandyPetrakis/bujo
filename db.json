@@ -71,7 +71,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-2-13",
-      "additionalNotes": "- Madeline Miller\n- Say the Right Thing ",
+      "additionalNotes": "- Madeline Miller\n- Say the Right Thing \n- How to win any argument\n- Cracking the coding interview",
       "id": 14
     },
     {
@@ -162,7 +162,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-18",
-      "additionalNotes": ".",
+      "additionalNotes": "-",
       "urgent": false,
       "important": false,
       "complete": false,
@@ -284,14 +284,14 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-22",
-      "additionalNotes": "- Year view with goal management\n- Add details to goals (move to year view?)\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make goal fixed height and overflow scroll\n- Set cursor\n- Fix reload issue \n- Add Save indication on ideas",
+      "additionalNotes": "- Year view with goal management\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make goal fixed height and overflow scroll\n- Fix reload issue \n",
       "urgent": false,
       "important": false,
       "complete": false,
       "id": 43
     },
     {
-      "details": "Send congratulations card to Carolyn + John",
+      "details": "Send congratulations to Carolyn ",
       "type": "task",
       "eventDate": null,
       "dateCreated": "2023-02-23",
@@ -420,6 +420,14 @@
       "details": "Workout 3x/week",
       "category": "fitness",
       "id": 4
+    },
+    {
+      "year": 2023,
+      "month": 2,
+      "dateCreated": "2023-02-25",
+      "details": "Weekly coffee dates",
+      "category": "relationships",
+      "id": 5
     }
   ]
 }

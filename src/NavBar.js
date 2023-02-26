@@ -8,12 +8,6 @@ const linkStyles = {
   borderStyle: "none",
 };
 
-const activeLinkStyle = {
-  background: "#f2f2f2",
-  color: "#222222",
-  borderRadius: "12px",
-};
-
 function NavBar() {
   return (
     <>
@@ -25,9 +19,7 @@ function NavBar() {
             exact
             style={{ linkStyles }}
             activeStyle={{
-              background: "#f2f2f2",
-              color: "#222222",
-              borderRadius: "12px",
+              borderBottom: "4px solid #405952",
             }}
           >
             <LogIcon />
@@ -37,9 +29,7 @@ function NavBar() {
             exact
             style={{ linkStyles }}
             activeStyle={{
-              background: "#f2f2f2",
-              color: "#222222",
-              borderRadius: "12px",
+              borderBottom: "4px solid #405952",
             }}
           >
             <CalendarIcon />
@@ -49,9 +39,7 @@ function NavBar() {
             exact
             style={{ linkStyles }}
             activeStyle={{
-              background: "#f2f2f2",
-              color: "#222222",
-              borderRadius: "12px",
+              borderBottom: "4px solid #405952",
             }}
           >
             <ListIcon />
@@ -61,9 +49,7 @@ function NavBar() {
             exact
             style={{ linkStyles }}
             activeStyle={{
-              background: "#f2f2f2",
-              color: "#222222",
-              borderRadius: "12px",
+              borderBottom: "4px solid #405952",
             }}
           >
             <BulbIcon />

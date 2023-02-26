@@ -32,7 +32,7 @@ function MonthlyTasks({ displayMonth }) {
     <div className="monthlyTask">
       <h2 className="center">This Month's Tasks</h2>
       <div className="line" />
-      <div className="taskList"> {filteredList}</div>
+      <div className="monthlyTaskList"> {filteredList}</div>
     </div>
   );
 }

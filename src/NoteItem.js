@@ -144,27 +144,6 @@ function NoteItem({ note, onIdeaClick }) {
         ) : (
           <div>{note.details}</div>
         )}
-        {hover ? (
-          <div className="editIcons">
-            {editing ? null : (
-              <>
-                <button
-                  className="editButton"
-                  onClick={() => setEditing(!editing)}
-                >
-                  <span role="img" aria-label="edit">
-                    <Pencil />
-                  </span>
-                </button>
-                <button className="deleteButton" onClick={handleDelete}>
-                  <span role="img" aria-label="edit">
-                    <Delete />
-                  </span>
-                </button>
-              </>
-            )}
-          </div>
-        ) : null}
       </div>
     );
   }

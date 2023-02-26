@@ -1,6 +1,6 @@
 body {
-    background-color: #dddbdb;
-    color: #222222;
+    background-color: #ffb684;
+    color: #405952;
     padding: 40px;
     font-family: arial;
   }
@@ -21,7 +21,7 @@ body {
     margin-left: 20px;
     font-weight: bold;
     text-decoration: overline;
-    color: #c7b28e;
+    color: #405952;
     flex-grow: 1;
     flex-shrink: 2;
   }
@@ -41,31 +41,35 @@ body {
   }
 
   .cardContainer{
-    border-style: outset;
-    border-color: #b7b7b7b2;
-    background-color: #f2f2f2;
+    border-style: solid;
+    border-color: #ffbd90;
+    background-color: #ffe2ce;
     border-radius: 15px;
     margin: 20px;
     border-width: 2px;
     padding: 20px;
     min-height: 300px;
+    color:#405952;
   }
   
   .line {
     width: 30%;
     margin: -15px auto 15px auto;
-    border-bottom: 1px solid #b7b7b7b2;
+    border-bottom: 1px solid #405952;
   }
 
   .center{
     text-align: center;
     padding: 0;
-    margin: 20px
+    margin: 20px;
+    color:#405952;
+
   }
   
   /* Intake  */
   
   .cardItem{
+    color:#405952;
     display: flex;
     flex-wrap: nowrap;
     padding: 20px;
@@ -74,7 +78,9 @@ body {
   }
 
   .noteType{
-    background: #F2F2F2F2;
+    color:#405952;
+
+    background: #FFE2CE;
     width: 80px;
     border-radius: 12px;
     padding: 5px;
@@ -90,8 +96,8 @@ body {
     border-style: none;
     padding: 10px;
     border-radius: 12px;
-    border-bottom: 1px solid #b7b7b7b2;
-    background-color: #F2F2F2F2;
+    border-bottom: 1px solid #405952;
+    background-color: #ffebdd;
     margin: 10px;
   }
   .noteIcon {
@@ -114,7 +120,7 @@ body {
     width: 200px;
     height: 40px;
     font-size: 18px;
-    background: #F2F2F2F2;
+    background: #FFE2CE;
     border-radius: 12px;
     padding: 2px;
     padding-left: 5px;
@@ -128,15 +134,6 @@ body {
     margin: 0 10px 0 15px;
   }
   
-  .noteButton{
-    background: #222222;
-    border-style: none;
-    border-radius: 12px;
-    font-size: 20px;
-    padding: 20px 40px;
-    color: #f2f2f2;
-   margin: 20px
-  }
 
 /* Rapid Log  */
 
@@ -164,7 +161,7 @@ body {
     width: 35%
   }
   .monthSelect{
-    background-color: #f2f2f2;
+    background-color: #FFE2CE;
     border-style: none;
     font-size: 30px;
     padding: 3px;
@@ -192,20 +189,27 @@ body {
 
   .careerGoals,  .relationshipGoals{
     width: 50%;
-    border-right: 1px solid;
+    border-right: 1px solid #405952;
+    overflow: scroll;
   }
 
   .careerGoals, .fitnessGoals{
-    border-bottom: 1px solid;
-    margin-top: 20px
+    border-bottom: 1px solid #405952;
+    margin-top: 20px;
+    overflow: scroll;
+
   }
   .fitnessGoals, .restGoals {
-    width: 50%
+    width: 50%;
+    overflow: scroll;
+
   }
 
 .goalItem{
   font-size: 16px;
-  margin: 0 0 10px 10px
+  margin: 0 0 10px 10px;
+  overflow: scroll;
+
 }
  .goalSetContainer{
    display: flex;
@@ -217,21 +221,22 @@ body {
   font-size: 18px;
   border: none;
   border-radius: 12px;
-  border-bottom: 1px solid #b7b7b7b2;
-  margin-left:3px;
-  margin-top: 20px;
+  border-bottom: 1px solid #405952;
+  margin: 10px 5px;
   height: 30px;
   width: 200px;
   flex-shrink: 2;
-  padding-left: 20px;
+  padding-left: 10px;
+  background-color: #ffebdd;
 }
 
   .categorySelect{
-    background: #F2F2F2F2;
+    background: #FFE2CE;
     border-radius: 12px;
     padding: 0px;
     border-style: none;
     flex-grow: 0;
+    flex-shrink: 1;
   }
   .goalSubmit{
     display: grid;
@@ -253,6 +258,9 @@ body {
   /* Monthly Tasks */
 .monthlyTask{
   margin-top: 100px;
+}
+.monthlyTaskList{
+  padding: 20px
 }
 
 
@@ -322,18 +330,17 @@ body {
   cursor: pointer;
 }
   .item {
-   margin: 5px;
+    margin:5px;
    font-size: 18px;
-   width: 100%;
+   width: 90%;
    height: 30px;
    display: flex;
-   flex-wrap: nowrap;
    flex-direction: row;
-
+   cursor: pointer;
   }
+
   .item:hover{
-    border-bottom: 2px solid #b7b7b7b2;
-    border-radius: 12px;
+    border-bottom: 2px solid #405952;
   }
 
 .taskItemIcon{
@@ -363,6 +370,7 @@ body {
     margin-left:3px;
     width: 100%;
     flex-shrink: 2;
+    background-color: #ffebdd;
   }
 
   .editItem{
@@ -397,9 +405,6 @@ body {
   border: none;
 }
 
-
-
-
 /* Ideas  */
 
 .allIdeas{
@@ -409,57 +414,53 @@ body {
 .ideaContainer{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 20%;
   flex-grow: 1;
-  border: solid;
-  border-style: outset;
-  border-color: #b7b7b7b2;
-  background-color: #f2f2f2;
-  border-width: 1px;
-  border-radius: 15px;
-  margin: 20px 10px 20px 20px;
-  padding: 20px;
+  border-right: 2px solid #405952;
+  background-color: #FFE2CE;
+  margin: 20px 10px 20px 10px;
+  padding: 10px;
   font-size: 20px;
+  overflow: scroll;
 }
 
 .ideaDetails{
   font-size: 20px;
   width: 50%;
   flex-grow: 3;
-  border: solid;
-  border-style: outset;
-  border-color: #b7b7b7b2;
-  background-color: #f2f2f2;
-  border-width: 1px;
-  border-radius: 15px;
+  background-color: #FFE2CE;
   margin: 20px 20px 20px 10px;
   padding: 20px
-
 }
+
 .ideaEdit{
   display: flex;
   flex-direction: column;
+  height: 430px;
 }
 
 .titleEdit{
+  color: #405952 ;
   height: 30px;
   font-size: 20px;
   font-weight: bold;
   font-family: arial;
   border-radius: 12px;
   padding: 10px;
-  background-color: #f2f2f2;
+  background-color: #ffebdd;
   border: solid;
   border-style: outset;
   border-color: #b7b7b7b2;
-  background-color: #f2f2f2;
   border-width: 1px;
   border-radius: 15px;
 }
 
 .detailEdit{
+  color: #405952 ;
+
+
 font-size: 20px;
-background-color: #f2f2f2;
+background-color: #ffebdd;
 padding: 20px;
 font-family: arial;
 border-radius: 15px;
@@ -467,7 +468,6 @@ margin-top: 15px;
 border: solid;
 border-style: outset;
 border-color: #b7b7b7b2;
-background-color: #f2f2f2;
 border-width: 1px;
 }
 
@@ -482,23 +482,28 @@ margin: 0 10px 0px 0px;
   align-self: center;
 }
 
-  .bulbLi{
-    width: 20px;
-    height: 20px;
-  }
 
   .idea{
     margin:10px;
     display: flex;
   }
 
+  .saveButton{
+    background: #222222;
+    border-style: none;
+    border-radius: 12px;
+    font-size: 18px;
+    padding: 15px 30px;
+    color: #f2f2f2;
+  }
+
 
   /* Tasks */
 
   .taskContainer{
-    border-style: outset;
-    border-color: #b7b7b7b2;
-    background-color: #f2f2f2;
+    border-style: solid;
+    border-color: #ffbd90;
+    background-color: #FFE2CE;
     border-radius: 15px;
     margin: 20px;
     border-width: 2px;
@@ -512,12 +517,13 @@ margin: 0 10px 0px 0px;
     align-items: stretch;
     margin-left: 15px;
     margin-right: 15px;
-    margin-bottom: 20px;
   }
+
 
   .checkDiv{
     align-self: flex-end;
-    margin: 10px 25px 10px 0
+    margin: 10px 25px 10px 0;
+    height: 10px
   }
 
   .checkbox{
@@ -529,6 +535,7 @@ margin: 0 10px 0px 0px;
 
   .allTasks{
     display: flex;
+    padding: 30px
   }
 
   .todoTasks{
@@ -539,39 +546,39 @@ margin: 0 10px 0px 0px;
 
 .subtext {
 text-align: center;
-color: darkgray;
-margin-top: 0;
-}
-.close {
-  margin: 0px
+color: #9C9B7A;
+margin-top: -10px;
 }
   .completed {
-    border: solid;
+    border-left: 2px solid;
     flex-grow: 1;
-    width: 30%;
-    border-style: outset;
-    border-color: #b7b7b7b2;
-    background-color: #f2f2f2;
-    border-width: 1px;
-    border-radius: 15px;
-    margin-left: 5px;
-    margin-right: 20px;
+    width: 25%;
+    background-color: #FFE2CE;
+    margin-left: 20px;
     margin-bottom: 20px;
-    padding: 10px 20px;
+    padding-left: 20px;
+    overflow: scroll;
   }
+
+  .taskItemDo,  .taskItemDelegate{
+    width: 50%;
+    height: 300px;
+    border-right: 2px solid #405952
+  }
+
+.taskItemSchedule, .taskItemDo{
+  width: 50%;
+  height: 300px;
+  border-bottom: 2px solid #405952;
+}
 
   .taskItem{
     width: 50%;
     height: 300px;
-    border-style: outset;
-    border-color: #b7b7b7b2;
-    background-color: #f2f2f2;
-    border-width: 1px;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-right:10px;
+    
   }
-.taskList{
+
+  .taskList{
   margin: 10px;
 }
 
@@ -591,7 +598,7 @@ margin-top: 0;
   cursor: pointer;
   width: 150px;
   height: 60px;
-  background: lightgray;
+  background: #ffcca9;
   border-radius: 100px;
   position: relative;
   transition: background-color .2s;
@@ -608,7 +615,7 @@ margin-top: 0;
   height: 55px;
   border-radius: 12px;
   transition: 0.2s;
-  background: #f2f2f2;
+  background: #405952;
   box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
 }
 
@@ -618,6 +625,6 @@ margin-top: 0;
 }
 
 .react-switch-checkbox:checked + .react-switch-label {
-  background-color: #222222;
-  color: whitesmoke
+  background-color: #405952;
+  color: #FFE2CE
 }

@@ -6,17 +6,16 @@ import {
   useGoalsList,
 } from "./Context";
 
-function Goals() {
+function Goals({ displayMonth }) {
   const [goalsList, setGoalsList] = useGoalsList();
   const [goal, setGoal] = useState("");
   const [category, setCategory] = useState("");
   const today = useCurrentDate();
-  const currentMonth = useCurrentMonth() || 12;
   const year = useCurrentYear() || 2023;
-  const [displayMonth, setDisplayMonth] = useState(currentMonth);
 
   function goalSubmit(e) {
     e.preventDefault();
+
     if (goal === "" || category === "") {
       return;
     }
@@ -43,6 +42,7 @@ function Goals() {
     setGoal("");
     setCategory("");
   }
+
   const renderGoals = goalsList
     .filter((goal) => goal.month === displayMonth && goal.category === "rest")
     .map((goal) => (
@@ -115,7 +115,7 @@ function Goals() {
               .filter(
                 (goal) =>
                   goal.month === displayMonth &&
-                  goal.category === "relationship"
+                  goal.category === "relationships"
               )
               .map((goal) => (
                 <div className="goalItem" key={goal.id}>
