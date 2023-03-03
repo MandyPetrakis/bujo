@@ -17,7 +17,7 @@ function Tasks() {
   }
 
   return (
-    <div className="taskContainer">
+    <div className="pageNoFlex">
       <h1 className="center">Tasks</h1>
       <div className="checkDiv" onChange={onCheck}>
         {showComplete ? (

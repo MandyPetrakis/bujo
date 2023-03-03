@@ -23,17 +23,6 @@
       "id": 3
     },
     {
-      "details": "Taxes",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 7,
-      "urgent": false,
-      "important": true,
-      "complete": false
-    },
-    {
       "details": "My Birthday",
       "type": "event",
       "eventDate": "2023-06-16",
@@ -43,17 +32,6 @@
       "dateCreated": "2023-2-13",
       "additionalNotes": null,
       "id": 10
-    },
-    {
-      "details": "Career video ",
-      "type": "task",
-      "eventDate": null,
-      "dateCreated": "2023-2-13",
-      "additionalNotes": null,
-      "id": 12,
-      "urgent": false,
-      "important": true,
-      "complete": false
     },
     {
       "details": "Phase 2 lectures",
@@ -116,20 +94,6 @@
       "id": 24
     },
     {
-      "details": "Hang with Jackie + Zan",
-      "type": "event",
-      "eventDate": "2023-02-18",
-      "eventDay": "18",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-02-16",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 26
-    },
-    {
       "details": "Dinner with Emiliano",
       "type": "event",
       "eventDate": "2023-02-17",
@@ -142,20 +106,6 @@
       "important": false,
       "complete": false,
       "id": 27
-    },
-    {
-      "details": "Astian on vacation",
-      "type": "event",
-      "eventDate": "2023-02-19",
-      "eventDay": "19",
-      "eventMonth": "02",
-      "eventYear": "2023",
-      "dateCreated": "2023-02-16",
-      "additionalNotes": null,
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 28
     },
     {
       "details": "Corporate Org Chart",
@@ -254,7 +204,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": false,
-      "complete": false,
+      "complete": true,
       "id": 39
     },
     {
@@ -265,7 +215,7 @@
       "additionalNotes": null,
       "urgent": true,
       "important": true,
-      "complete": false,
+      "complete": true,
       "id": 40
     },
     {
@@ -284,7 +234,7 @@
       "type": "idea",
       "eventDate": null,
       "dateCreated": "2023-02-22",
-      "additionalNotes": "- Year view with goal management\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Allow edits to urgent/important\n- Make goal fixed height and overflow scroll\n- Fix reload issue \n",
+      "additionalNotes": "- Year view with goal management\n- Allow edits to urgent/important\n- Add additional notes section on idea input \n- Make goal fixed height and overflow scroll \n- Fix reload issue\n- Implement Error Boundaries\n",
       "urgent": false,
       "important": false,
       "complete": false,
@@ -298,7 +248,7 @@
       "additionalNotes": "-",
       "urgent": false,
       "important": true,
-      "complete": false,
+      "complete": true,
       "id": 44
     },
     {
@@ -311,17 +261,6 @@
       "important": true,
       "complete": true,
       "id": 45
-    },
-    {
-      "details": "Modern app design",
-      "type": "idea",
-      "eventDate": null,
-      "dateCreated": "2023-02-23",
-      "additionalNotes": "-",
-      "urgent": false,
-      "important": false,
-      "complete": false,
-      "id": 46
     },
     {
       "details": "Job Search Notes",
@@ -377,15 +316,93 @@
       "id": 50
     },
     {
-      "details": "Send Julie's package",
+      "details": "www",
+      "type": "event",
+      "eventDate": null,
+      "eventDay": 25,
+      "additionalNotes": "-",
+      "urgent": null,
+      "important": null,
+      "complete": null,
+      "id": 55
+    },
+    {
+      "details": "dddd",
+      "type": "event",
+      "eventDate": "undefined-undefined-26",
+      "eventDay": 26,
+      "additionalNotes": "-",
+      "urgent": null,
+      "important": null,
+      "complete": null,
+      "id": 57
+    },
+    {
+      "details": "Night of Ideas | 7pm",
+      "type": "event",
+      "eventDate": "2023-03-04",
+      "eventDay": "04",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-27",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 61
+    },
+    {
+      "details": "Matthew in town",
+      "type": "event",
+      "eventDate": "2023-03-13",
+      "eventDay": "13",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-02-28",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 62
+    },
+    {
+      "details": "Mejuri Meeting | 9:30am",
+      "type": "event",
+      "eventDate": "2023-03-02",
+      "eventDay": "02",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-03-01",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 63
+    },
+    {
+      "details": "Skin Spirit Burlingame | 2pm",
+      "type": "event",
+      "eventDate": "2023-03-07",
+      "eventDay": "07",
+      "eventMonth": "03",
+      "eventYear": "2023",
+      "dateCreated": "2023-03-01",
+      "additionalNotes": "-",
+      "urgent": false,
+      "important": false,
+      "complete": false,
+      "id": 64
+    },
+    {
+      "details": "Taxes",
       "type": "task",
       "eventDate": null,
-      "dateCreated": "2023-02-25",
+      "dateCreated": "2023-03-01",
       "additionalNotes": "-",
       "urgent": true,
       "important": true,
       "complete": false,
-      "id": 51
+      "id": 65
     }
   ],
   "goals": [

@@ -1,8 +1,11 @@
 body {
-    background-color: #ffb684;
-    color: #405952;
-    padding: 40px;
-    font-family: arial;
+  background-attachment: fixed;
+  background-repeat:no-repeat;
+  background-position: left bottom;
+  color: #405952;
+  font-family: arial;
+  background-image: url("https://images.pexels.com/photos/1877920/pexels-photo-1877920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") ;
+  background-color: #f2f2f2;
   }
 
   /* NavBar */
@@ -10,15 +13,14 @@ body {
   .navBarContainer {
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px;
     justify-content: space-between;
+    padding:20px
       }
   
   .logo{
     align-self: flex-start;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 100px;
-    margin-left: 20px;
     font-weight: bold;
     text-decoration: overline;
     color: #405952;
@@ -39,54 +41,74 @@ body {
     width: 30px;
     height: 30px;
   }
+  .page {
+    background-color: #ffe2ce;
+    border-radius: 12px;
+    padding: 20px;
+    color:#405952;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 5% 0 40%;
+    align-items: center;
+  }
+
+  .pageNoFlex {
+    background-color: #ffe2ce;
+    border-radius: 12px;
+    padding: 25px;
+    color:#405952;
+    width: 60%;
+    margin-left: 30%;
+  }
 
   .cardContainer{
-    border-style: solid;
-    border-color: #ffbd90;
-    background-color: #ffe2ce;
-    border-radius: 15px;
-    margin: 20px;
-    border-width: 2px;
-    padding: 20px;
-    min-height: 300px;
-    color:#405952;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    min-width: 350px;
   }
   
   .line {
     width: 30%;
     margin: -15px auto 15px auto;
-    border-bottom: 1px solid #405952;
+    border-top: 1px solid #405952;
   }
 
   .center{
     text-align: center;
-    padding: 0;
-    margin: 20px;
     color:#405952;
-
+    margin-bottom: 25px;
   }
-  
+  h1{
+  font-family: 'Petit Formal Script', cursive;
+  }
   /* Intake  */
   
   .cardItem{
     color:#405952;
     display: flex;
     flex-wrap: nowrap;
-    padding: 20px;
     flex-grow: 1;
     justify-content: center;
+    margin: 5px 0 10px;
   }
 
   .noteType{
     color:#405952;
-
     background: #FFE2CE;
-    width: 80px;
     border-radius: 12px;
-    padding: 5px;
     text-align: center;
     border-style: none;
     flex-grow: 0;
+  }
+  
+  .noteIcon {
+    width: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .noteInput{
@@ -98,22 +120,13 @@ body {
     border-radius: 12px;
     border-bottom: 1px solid #405952;
     background-color: #ffebdd;
-    margin: 10px;
   }
-  .noteIcon {
-    width: 20px; 
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .extraDetails{
     display: flex;
-    align-self: center;
-    flex-grow: 1;
     justify-content: center;
     align-items: center;
-    height: 120px
+    height: 120px;
   }
   
   .dateEnter{
@@ -140,8 +153,9 @@ body {
   .flexList{
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    padding: 10px
+    margin: 10px 0 20px 40px;
+    padding: 15px 40px;
+    border-left: 2px solid #405952;
     }
 
 /* Monthly View */
@@ -149,7 +163,6 @@ body {
 .calendarItemContainer{
   display: flex;
   align-items: stretch;
-  padding: 10px
 
 }
 
@@ -164,57 +177,59 @@ body {
     background-color: #FFE2CE;
     border-style: none;
     font-size: 30px;
-    padding: 3px;
-    align-self: center;
     font-weight: bold;
     cursor: pointer;
-    margin-bottom: 10px
+    margin: 10px;
+    color: #405952;
+    font-family: 'Petit Formal Script', cursive;
+
   }
   .focus{
     align-self: center;
-    justify-content: space-between;
-    height: 350px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
   }
 
   .allGoals{
     display: flex;
     flex-direction: column;
+    height: 300px;
     }
 
   .halfGoals{
     display: flex;
+    height: 50%;
     }
 
   .careerGoals,  .relationshipGoals{
     width: 50%;
     border-right: 1px solid #405952;
     overflow: scroll;
+    padding: 10px
   }
 
   .careerGoals, .fitnessGoals{
     border-bottom: 1px solid #405952;
-    margin-top: 20px;
     overflow: scroll;
-
   }
   .fitnessGoals, .restGoals {
     width: 50%;
     overflow: scroll;
-
+    padding: 10px
   }
 
 .goalItem{
   font-size: 16px;
-  margin: 0 0 10px 10px;
-  overflow: scroll;
+  margin: 0 0 10px 0;
+  text-align: center;
 
 }
  .goalSetContainer{
    display: flex;
    flex-wrap: nowrap;
    align-self: flex-end;
+   margin-bottom: 20px;
 }
 
 .editBox{
@@ -238,30 +253,7 @@ body {
     flex-grow: 0;
     flex-shrink: 1;
   }
-  .goalSubmit{
-    display: grid;
-    align-self: center;
-    background: #222222;
-    border-style: none;
-    border-radius: 12px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 18px;
-    color: #f2f2f2;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-  }
 
-  /* Monthly Tasks */
-.monthlyTask{
-  margin-top: 100px;
-}
-.monthlyTaskList{
-  padding: 20px
-}
 
 
 /* Calendar */
@@ -277,77 +269,173 @@ body {
   .day{
     font-weight: bold;
     font-size: 18px;
-    margin: 5px;
+    margin-bottom: 5px;
     display: flex;
     flex-wrap: nowrap;
     border-bottom: 1px solid #b7b7b7b2;  }
+
   .currentDay{
     width: 10px;
     font-weight:100;
     margin-left: -10px;
   }
+
   .dayItem{
     width: 60px;
-    align-items: end;
+    height: 30px;
     flex-wrap: nowrap;
-    flex: none;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2.5px;
+    justify-content: flex-start;
   }
   .dayNumber{
-  width:18px;
+  width:25px;
   text-align: right;
+  display: flex;
+  justify-content: end;
   }
+
   .dayLine{
     width: 10px;
+    margin: 0 2px;
     text-align: center;
-    margin: 2px
   }
   .dayDay{
-    width: 15px;
-    text-align:center;
-    /* margin-right: 3px */
+    text-align: left;
+    display: flex;
+
   }
 
   .eventItem{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 5px;
     cursor: pointer;
+    width: 100%;
+    height: fit-content;
   }
   .dayEvent{
     font-weight: 100;
     margin-left: 5px;
     display: flex;
     font-size: 18px;
+    width: fit-content;
+    height: fit-content;
+  } 
+
+  .eventDiv{
+    display: flex;
+    width: 86%;
+    position: relative;
+    margin-right: 3px;
   }
+
+.eventAddDiv {
+  display: flex;
+  position: relative;
+  width:90%;
+  margin: 0 0 2px 11px
+}
+ .add{
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  pointer-events: none
+ }
+
+  input:hover + .add {
+    visibility: visible;
+  }
+
+  input:focus + .add {
+    visibility: visible
+  }
+
  
 /* Note Item  */
-
-.cursor{
-  cursor: pointer;
+.cursor {
+  cursor:pointer
 }
+
   .item {
-    margin:5px;
+   margin-bottom: 10px;
    font-size: 18px;
-   width: 90%;
+   width: 100%;
    height: 30px;
    display: flex;
    flex-direction: row;
-   cursor: pointer;
+   height: fit-content;
+   position: relative;
   }
 
-  .item:hover{
-    border-bottom: 2px solid #405952;
+  .itemE {
+    font-size: 18px;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    position: relative;
+    margin-left: 5px;
+   }
+ 
+
+  input{
+    font-size: 18px;
+    height: 24px;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-bottom: 1px dashed transparent;
   }
+
+  input:hover {
+    border-bottom: 1px dotted #405952;
+    cursor: pointer
+  }
+
+  input:focus{
+    border-bottom: 2px solid #405952;
+    cursor: text;
+    outline: none;
+  }
+
+  .pencil{
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+  }
+
+  input:hover ~ .pencil{
+    display: block;
+  }
+  
+  input:focus ~ .pencil{
+    display: none;
+  }
+
+  .delete{
+    position: absolute;
+    right: 10px;
+    visibility: hidden;
+    transition: visibility 150ms ease-in-out  ;
+  }
+
+  input:focus ~ .delete{
+    background-color: transparent;
+    visibility: visible;
+  }
+
+input.noteInput, input.editBox, input.titleEdit{
+  border-bottom: 1px solid #405952;
+}
 
 .taskItemIcon{
   padding: 0px;
   margin-right: 5px;
   width:20px;
-  align-self: flex-start;
+  align-self: center;
   text-align: center;
   font-weight: bold;
   cursor: pointer;
@@ -358,7 +446,7 @@ body {
     padding: 0px;
     margin-right: 5px;
     width:20px;
-    align-self: flex-start;
+    align-self: center;
     text-align: center;
     font-weight: bold;
   }
@@ -517,13 +605,15 @@ margin: 0 10px 0px 0px;
     align-items: stretch;
     margin-left: 15px;
     margin-right: 15px;
+    position: relative;
   }
 
 
   .checkDiv{
-    align-self: flex-end;
+    position: absolute;
     margin: 10px 25px 10px 0;
-    height: 10px
+    height: 10px;
+    right:80px
   }
 
   .checkbox{
@@ -562,24 +652,29 @@ margin-top: -10px;
 
   .taskItemDo,  .taskItemDelegate{
     width: 50%;
-    height: 300px;
-    border-right: 2px solid #405952
+    height:100%;
+    border-right: 2px solid #405952;
+    min-height: 300px;
+
   }
 
 .taskItemSchedule, .taskItemDo{
   width: 50%;
-  height: 300px;
+  height: 100%;
   border-bottom: 2px solid #405952;
+  min-height: 300px;
+
 }
 
-  .taskItem{
-    width: 50%;
-    height: 300px;
-    
+.taskItem{
+   width: 50%;
+   height: 100%;
+   min-height: 300px;
   }
 
   .taskList{
-  margin: 10px;
+padding: 30px;
+  overflow: scroll;
 }
 
 /* Toggle  */
@@ -596,9 +691,9 @@ margin-top: -10px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 150px;
-  height: 60px;
-  background: #ffcca9;
+  width: 135px;
+  height: 50px;
+  background: #9C9B7A;
   border-radius: 100px;
   position: relative;
   transition: background-color .2s;
@@ -612,8 +707,9 @@ margin-top: -10px;
   top: 2px;
   left: 2px;
   width: 15%;
-  height: 55px;
+  height: 45px;
   border-radius: 12px;
+  border:none;
   transition: 0.2s;
   background: #405952;
   box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);

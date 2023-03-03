@@ -48,7 +48,7 @@ function Ideas() {
     ));
 
   return (
-    <div className="cardContainer">
+    <div className="pageNoFlex">
       <h1 className="center">Ideas</h1>
       <div className="allIdeas">
         <div className="ideaContainer">{renderList}</div>

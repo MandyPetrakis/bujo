@@ -1,20 +1,39 @@
 import React, { useState } from "react";
 import { Delete, Pencil } from "./Icons";
 import { useNotes } from "./Context";
-import EditNote from "./EditNote";
 
-export default function CalendarEvent({ event }) {
+export default function CalendarEvent({ note }) {
   const [notes, setNotes] = useNotes();
-  const [editing, setEditing] = useState(false);
+  const [details, setDetails] = useState(note.details);
+
+  function handleChange(e) {
+    setDetails(e.target.value);
+    fetch(`http://localhost:3000/notes/${note.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ details: details }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        let updatedNotes = notes.map((note) => {
+          if (data.id === note.id) {
+            return data;
+          } else return note;
+        });
+        setNotes(updatedNotes);
+      });
+  }
 
   function handleDelete() {
-    fetch(`http://localhost:3000/notes/${event.id}`, {
+    fetch(`http://localhost:3000/notes/${note.id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
       .then(() => {
         let updatedNotes = notes.filter((noteA) => {
-          if (event.id === noteA.id) {
+          if (note.id === noteA.id) {
             return null;
           } else return noteA;
         });
@@ -23,24 +42,22 @@ export default function CalendarEvent({ event }) {
   }
 
   return (
-    <div onClick={() => setEditing(true)} key={event.id} className="dayEvent">
-      {editing ? (
-        <>
-          <EditNote
-            body={event.details}
-            resetEdit={() => setEditing(false)}
-            noteId={event.id}
-            className="noteEditBox"
-          />
-          <button className="deleteButton" onClick={handleDelete}>
-            <span role="img" aria-label="edit">
-              <Delete />
-            </span>
-          </button>
-        </>
-      ) : (
-        <div>O {event.details}</div>
-      )}
+    <div key={note.id} className="itemE">
+      <div className="eventDiv">
+        <div className="itemIcon">O</div>
+        <input
+          name="text"
+          type="text"
+          value={details}
+          onChange={handleChange}
+        />
+        <span className="pencil">
+          <Pencil />
+        </span>
+        <div onClick={handleDelete} className="delete">
+          <Delete />
+        </div>
+      </div>
     </div>
   );
 }

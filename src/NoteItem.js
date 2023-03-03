@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useUpdateNotes, useNotes } from "./Context";
-import EditNote from "./EditNote";
 import { Pencil, Delete, Sun } from "./Icons";
 
 function NoteItem({ note, onIdeaClick }) {
@@ -8,6 +7,27 @@ function NoteItem({ note, onIdeaClick }) {
   const [notes, setNotes] = useNotes();
   const [hover, setHover] = useState(false);
   const [editing, setEditing] = useState(false);
+  const [details, setDetails] = useState(note.details);
+
+  function handleChange(e) {
+    setDetails(e.target.value);
+    fetch(`http://localhost:3000/notes/${note.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ details: details }),
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        let updatedNotes = notes.map((note) => {
+          if (data.id === note.id) {
+            return data;
+          } else return note;
+        });
+        setNotes(updatedNotes);
+      });
+  }
 
   function handleDelete() {
     fetch(`http://localhost:3000/notes/${note.id}`, {
@@ -45,41 +65,31 @@ function NoteItem({ note, onIdeaClick }) {
 
   if (note.type === "task") {
     return (
-      <div
-        onMouseOver={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        className="item"
-        onClick={() => {
-          setEditing(true);
-        }}
-      >
-        <div
-          className="taskItemIcon"
-          onClick={() => {
-            setCompleted(!completed);
-            onComplete();
-          }}
-        >
-          {completed ? " X " : " ● "}
+      <>
+        <div className="item">
+          <div
+            className="taskItemIcon"
+            onClick={() => {
+              setCompleted(!completed);
+              onComplete();
+            }}
+          >
+            {completed ? " X " : " ● "}
+          </div>
+          <input
+            name="tex"
+            type="text"
+            value={details}
+            onChange={handleChange}
+          />
+          <span className="pencil">
+            <Pencil />
+          </span>
+          <div onClick={handleDelete} className="delete">
+            <Delete />
+          </div>
         </div>
-        {editing ? (
-          <>
-            <EditNote
-              body={note.details}
-              resetEdit={() => setEditing(false)}
-              noteId={note.id}
-              className="noteEditBox"
-            />
-            <button className="deleteButton" onClick={handleDelete}>
-              <span role="img" aria-label="edit">
-                <Delete />
-              </span>
-            </button>
-          </>
-        ) : (
-          <div className="cursor">{note.details}</div>
-        )}
-      </div>
+      </>
     );
   } else if (note.type === "event") {
     return (
@@ -89,38 +99,13 @@ function NoteItem({ note, onIdeaClick }) {
         onMouseLeave={() => setHover(false)}
       >
         <div className="itemIcon">O</div>
-        {editing ? (
-          <EditNote
-            body={note.details}
-            resetEdit={() => setEditing(false)}
-            noteId={note.id}
-          />
-        ) : (
-          <div>
-            {note.details} | {note.eventMonth}/{note.eventDay}
-          </div>
-        )}
-        {hover ? (
-          <div className="editIcons">
-            {editing ? null : (
-              <>
-                <button
-                  className="editButton"
-                  onClick={() => setEditing(!editing)}
-                >
-                  <span role="img" aria-label="edit">
-                    <Pencil />
-                  </span>
-                </button>
-                <button className="deleteButton" onClick={handleDelete}>
-                  <span role="img" aria-label="edit">
-                    <Delete />
-                  </span>
-                </button>
-              </>
-            )}
-          </div>
-        ) : null}
+        <input name="tex" type="text" value={details} onChange={handleChange} />
+        <span className="pencil">
+          <Pencil />
+        </span>
+        <div onClick={handleDelete} className="delete">
+          <Delete />
+        </div>
       </div>
     );
   } else if (note.type === "idea") {
@@ -134,16 +119,13 @@ function NoteItem({ note, onIdeaClick }) {
         <div className="itemIcon">
           <Sun />
         </div>
-        {editing ? (
-          <EditNote
-            body={note.details}
-            resetEdit={() => setEditing(false)}
-            noteId={note.id}
-            className="noteEditBox"
-          />
-        ) : (
-          <div>{note.details}</div>
-        )}
+        <input name="tex" type="text" value={details} onChange={handleChange} />
+        <span className="pencil">
+          <Pencil />
+        </span>
+        <div onClick={handleDelete} className="delete">
+          <Delete />
+        </div>
       </div>
     );
   }

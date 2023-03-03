@@ -6,7 +6,7 @@ import {
   useGoalsList,
 } from "./Context";
 
-function Goals({ displayMonth }) {
+function Goals({ displayMonth = "" }) {
   const [goalsList, setGoalsList] = useGoalsList();
   const [goal, setGoal] = useState("");
   const [category, setCategory] = useState("");
@@ -57,19 +57,12 @@ function Goals({ displayMonth }) {
       <div className="line" />
       <div className="goalSetContainer">
         <form onSubmit={goalSubmit}>
-          <input
-            type="text"
-            className="editBox"
-            placeholder="New Goal"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-          />
           <select
             value={category}
             className="categorySelect"
             onChange={(e) => setCategory(e.target.value)}
           >
-            <option disabled selected value="">
+            <option disabled value="">
               Category
             </option>
             <option value="career">Career</option>
@@ -77,9 +70,16 @@ function Goals({ displayMonth }) {
             <option value="relationships">Relationships</option>
             <option value="rest">Rest</option>
           </select>
+          <input
+            type="text"
+            className="editBox"
+            placeholder="New Goal"
+            value={goal}
+            onChange={(e) => setGoal(e.target.value)}
+          />
         </form>
       </div>
-      <div className="allgoals">
+      <div className="allGoals">
         <div className="halfGoals">
           <div className="careerGoals">
             <h3 className="center">Career</h3>

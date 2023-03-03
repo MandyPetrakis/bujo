@@ -31,8 +31,7 @@ function MonthlyTasks({ displayMonth }) {
   return (
     <div className="monthlyTask">
       <h2 className="center">This Month's Tasks</h2>
-      <div className="line" />
-      <div className="monthlyTaskList"> {filteredList}</div>
+      <div className="flexList"> {filteredList}</div>
     </div>
   );
 }

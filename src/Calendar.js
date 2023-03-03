@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCurrentDate, useCurrentYear, useNotes } from "./Context";
 import { LocalDate } from "@js-joda/core";
 import CalendarEvent from "./CalendarEvent";
+import NewEventIntake from "./NewEventIntake";
 
 function Calendar({ displayMonth }) {
   const year = useCurrentYear();
@@ -41,7 +42,7 @@ function Calendar({ displayMonth }) {
         <div className="day" key={day.day}>
           <div className="dayItem">
             {currentDate._day == day.day ? (
-              <div className="currentDay">></div>
+              <div className="currentDay">&gt;</div>
             ) : null}
             <div className="dayNumber">{day.day}</div>
             <div className="dayLine"> | </div>
@@ -49,8 +50,9 @@ function Calendar({ displayMonth }) {
           </div>
           <div className="eventItem">
             {dailyEvents.map((event) => (
-              <CalendarEvent key={event.id} event={event} />
+              <CalendarEvent key={event.id} note={event} />
             ))}
+            <NewEventIntake day={day.day} month={displayMonth} year={year} />
           </div>
         </div>
       </>

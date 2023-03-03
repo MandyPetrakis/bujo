@@ -1,10 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
 import { LocalDate } from "@js-joda/core";
 
+const dateDetails = LocalDate.now();
+const month = dateDetails.monthValue();
+const year = dateDetails.year();
+
 const CurrentDate = React.createContext();
 const Notes = React.createContext();
-const CurrentMonth = React.createContext();
-const CurrentYear = React.createContext();
+const CurrentMonth = React.createContext(month);
+const CurrentYear = React.createContext(year);
 const GoalsList = React.createContext();
 
 export function useCurrentYear() {
@@ -15,7 +19,8 @@ export function useCurrentDate() {
   return useContext(CurrentDate);
 }
 export function useCurrentMonth() {
-  return useContext(CurrentMonth);
+  console.log("useCurrentMonth", CurrentMonth);
+  return useContext(CurrentMonth || 2);
 }
 
 export function useNotes() {
@@ -34,6 +39,7 @@ function ContextProvider({ children }) {
   const [goalsList, setGoalsList] = useState([]);
 
   useEffect(() => {
+    console.log("use effect");
     const dateDetails = LocalDate.now();
     const month = dateDetails.monthValue();
     const year = dateDetails.year();
